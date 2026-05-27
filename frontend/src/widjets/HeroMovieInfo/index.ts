@@ -1,0 +1,1 @@
+export { HeroMovieInfo } from './ui/HeroMovieInfo.tsx'
