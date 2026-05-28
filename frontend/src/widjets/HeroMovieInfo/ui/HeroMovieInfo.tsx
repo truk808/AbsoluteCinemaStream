@@ -1,3 +1,5 @@
+import {OpenTrailer} from "../../../features/OpenTrailer";
+
 const MOVIE_DATA = {
     nameRu: "Матрица", //
     nameEn: "The Matrix", //
@@ -45,10 +47,7 @@ export const HeroMovieInfo = () => {
                         <img className="rounded-2xl w-full shadow-2xl border border-white/5" src={MOVIE_DATA.posterUrl} alt={MOVIE_DATA.nameRu}/>
                     </div>
                     <div className="w-full mt-2 gap-2 flex flex-col">
-                        <button
-                            className="w-full flex-grow bg-[#fdc073] font-semibold text-base px-4 py-3.5 rounded-xl text-[#19120a] flex items-center justify-center gap-2 cursor-pointer hover:bg-[#eeb163] transition-colors">
-                            Смотреть трейлер
-                        </button>
+                        <OpenTrailer />
                         <button
                             className="w-full bg-[#271f16] my-1.5 text-[#eedfd0] border-1 border-[#454545] font-semibold text-base px-4 py-3.5 rounded-xl text-[#19120a] flex items-center justify-center gap-2 cursor-pointer hover:bg-[#eeb163] transition-colors">
                             Добавить в
