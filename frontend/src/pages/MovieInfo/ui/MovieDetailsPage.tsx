@@ -5,7 +5,6 @@ export const MovieDetailsPage = () => {
     return (
         <div>
             <HeroMovieInfo />
-
         </div>
     );
 };

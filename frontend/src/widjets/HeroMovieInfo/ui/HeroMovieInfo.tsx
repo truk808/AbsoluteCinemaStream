@@ -1,31 +1,12 @@
 import {OpenTrailer} from "../../../features/OpenTrailer";
-
-const MOVIE_DATA = {
-    nameRu: "Матрица", //
-    nameEn: "The Matrix", //
-    nameOriginal: "The Matrix", //
-    year: 1999, //
-    country: "  США", //
-    rating: "8.5", //
-    genres: [
-        {
-            genre: "фантастика"
-        },
-        {
-            genre: "ужасы"
-        },
-        {
-            genre: "боевик"
-        },
-    ],
-    ratingAgeLimits: "age16",
-    filmLength: "136",
-    shortDescription: "Хакер Нео узнает, что его мир — виртуальный. Выдающийся экшен, доказавший, что зрелищное кино может быть умным",
-    posterUrl: "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/cf1970bc-3f08-4e0e-a095-2fb57c3aa7c6/360",
-    coverUrl: "https://avatars.mds.yandex.net/get-ott/1672343/2a0000016cc7177239d4025185c488b1bf43/orig",
-};
+import {useSelector} from "react-redux";
+import {selectCurrentFilm} from "../../../entities/Film";
 
 export const HeroMovieInfo = () => {
+    const MOVIE_DATA = useSelector(selectCurrentFilm);
+
+    if (!MOVIE_DATA) return <div className='w-full h-full text-white text-9xl felx justify-center items-center'>загрузка</div>;
+
     return (
         <div className=" min-h-screen bg-[#19120a] p-4 md:p-12 overflow-x-hidden">
 
@@ -64,13 +45,15 @@ export const HeroMovieInfo = () => {
                                 <span>•</span>
                                 <span>{MOVIE_DATA.year}</span>
                                 <span>•</span>
-                                <span>{MOVIE_DATA.country.trim()}</span>
+                                {MOVIE_DATA.countries.map(() => {
+                                   return <span> country </span>
+                                })}
                             </div>
                         </div>
 
                         <div className="self-center md:self-start bg-[#f39d0b] px-5 py-3 rounded-xl flex flex-col items-center justify-center text-[#19120a] min-w-[100px] shadow-lg">
                             <span className="text-xs font-bold uppercase tracking-wider opacity-70">Cine Rating</span>
-                            <span className="text-3xl font-black">{MOVIE_DATA.rating}</span>
+                            <span className="text-3xl font-black">{MOVIE_DATA.ratingKinopoisk}</span>
                         </div>
                     </div>
 
@@ -99,3 +82,27 @@ export const HeroMovieInfo = () => {
 };
 
 
+// const MOVIE_DATA = {
+//     nameRu: "Матрица", //
+//     nameEn: "The Matrix", //
+//     nameOriginal: "The Matrix", //
+//     year: 1999, //
+//     country: "  США", //
+//     ratingKinopoisk: 8.5, //
+//     genres: [
+//         {
+//             genre: "фантастика"
+//         },
+//         {
+//             genre: "ужасы"
+//         },
+//         {
+//             genre: "боевик"
+//         },
+//     ],
+//     ratingAgeLimits: "age16",
+//     filmLength: "136",
+//     shortDescription: "Хакер Нео узнает, что его мир — виртуальный. Выдающийся экшен, доказавший, что зрелищное кино может быть умным",
+//     posterUrl: "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/cf1970bc-3f08-4e0e-a095-2fb57c3aa7c6/360",
+//     coverUrl: "https://avatars.mds.yandex.net/get-ott/1672343/2a0000016cc7177239d4025185c488b1bf43/orig",
+// };
