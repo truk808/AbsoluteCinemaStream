@@ -8,26 +8,30 @@ interface FilmCardProps {
 
 export const FilmCard = ({film}: FilmCardProps) => {
     return (
-        <NavLink to={`${ROUTES.FILM}/${film.kinopoiskId}`}>
-            <div className="flex flex-col min-w-[200px] min-h-[600px] max-w-[375px] max-h-[750px] m-5">
-                <div className="">
-                    <div
-                        className="relative top-18 left-2 w-20 bg-[#f39d0b] px-5 py-3 rounded-xl flex flex-col items-center justify-center text-[#19120a] shadow-lg">
-                        <span className="text-3xl font-black">{film.ratingKinopoisk}</span>
+        <NavLink to={`${ROUTES.FILM}/${film.kinopoiskId}`} className="block">
+            <div className="flex flex-col w-full max-w-[250px] h-[480px] group cursor-pointer select-none">
+                <div className="relative w-full h-[340px] rounded-2xl overflow-hidden bg-neutral-900 mb-4">
+                    <div className="absolute top-3 left-3 z-10 bg-[#f39d0b] px-3 py-1.5 rounded-xl flex items-center justify-center text-[#19120a] font-black text-sm shadow-md">
+                        <span>{film.ratingKinopoisk ? film.ratingKinopoisk.toFixed(1) : '✔'}</span>
                     </div>
-                    <img className='rounded-2xl mb-6' src={film.posterUrl} alt=""/>
+                    <img
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        src={film.posterUrl}
+                        alt={film.nameRu || ""}
+                    />
                 </div>
-                <h3 className='text-[#eedfd0] font-bold text-5xl'>{film.nameRu}</h3>
-                <div className='text-[#eedfd0]/70 font-medium'>
-                    {
-                        film.genres.map(genre => {
-                            return <span>{`${genre.genre} `}</span>
-                        })
-                    }
+                <div className="flex flex-col flex-1 justify-start">
+                    <h3 className="text-[#eedfd0] font-bold text-lg sm:text-xl line-clamp-2 leading-tight group-hover:text-[#f39d0b] transition-colors">
+                        {film.nameRu}
+                    </h3>
+                    <div className="text-[#eedfd0]/60 font-medium text-xs sm:text-sm mt-1 line-clamp-1">
+                        {film.genres.map((genre, index) => (
+                            <span key={index}>{genre.genre}{index < film.genres.length - 1 ? ', ' : ''}</span>
+                        ))}
+                    </div>
                 </div>
             </div>
         </NavLink>
-
     );
 };
 

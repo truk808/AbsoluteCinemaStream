@@ -15,10 +15,9 @@ export const Header = () => {
                     </div>
 
                     <div className='hidden md:flex gap-6 text-neutral-300 font-medium'>
-                        <NavLink to={ROUTES.MAIN}><span className='text-[#f39d0b]' onClick={() => setIsOpen(false)}>Home</span></NavLink>
-                        <span className='cursor-pointer hover:text-[#f39d0b] transition-colors'>Movies</span>
-                        <span className='cursor-pointer hover:text-[#f39d0b] transition-colors'>TV Shows</span>
-                        <span className='cursor-pointer hover:text-[#f39d0b] transition-colors'>Cartoons</span>
+                        <NavLink to={ROUTES.MAIN}><span className='text-[#f39d0b]'>Главная</span></NavLink>
+                        <span className='cursor-pointer hover:text-[#f39d0b] transition-colors'>Кино</span>
+                        <span className='cursor-pointer hover:text-[#f39d0b] transition-colors'>TV</span>
                     </div>
 
                     <div className='hidden md:flex items-center gap-4'>
@@ -47,11 +46,9 @@ export const Header = () => {
                 isOpen ? 'translate-x-0' : 'translate-x-full'
             }`}>
                 <div className='flex flex-col gap-6 text-xl text-neutral-200 font-semibold mb-8'>
-                    <NavLink to={ROUTES.MAIN}><span className='text-[#f39d0b]' onClick={() => setIsOpen(false)}>Home</span></NavLink>
-
-                    <span onClick={() => setIsOpen(false)}>Movies</span>
-                    <span onClick={() => setIsOpen(false)}>TV Shows</span>
-                    <span onClick={() => setIsOpen(false)}>Cartoons</span>
+                    <NavLink to={ROUTES.MAIN}><span className='text-[#f39d0b]' onClick={() => setIsOpen(false)}>Главная</span></NavLink>
+                    <span onClick={() => setIsOpen(false)}>Кино</span>
+                    <span onClick={() => setIsOpen(false)}>TV</span>
                 </div>
 
                 <hr className="border-neutral-800 mb-6" />
