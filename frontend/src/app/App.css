@@ -18,4 +18,9 @@ html {
 body {
     background: #19120a;
     /*background: #454545;*/
+
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }

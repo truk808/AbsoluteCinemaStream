@@ -1,13 +1,17 @@
 import './App.css'
-import {MainPage} from "../pages/Main";
+import AppRouter from "./routes/AppRoutes.tsx";
+import {Header} from "../widjets/Header/ui/Header.tsx";
 
 function App() {
 
 
     return (
-        <div className='container'>
-            <MainPage/>
-        </div>
+        <>
+            <Header />
+            <div className='container'>
+                <AppRouter />
+            </div>
+        </>
     )
 }
 

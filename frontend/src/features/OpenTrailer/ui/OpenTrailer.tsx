@@ -1,9 +1,19 @@
 import  ReactPlayer  from  'react-player'
 import {Modal} from "../../../shared/ui";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export const OpenTrailer = () => {
+interface OpenTrailerProps {
+    url: string;
+    name: string;
+    site: string;
+}
+
+export const OpenTrailer = ({url, name, site}: OpenTrailerProps) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        console.log(url)
+    }, [url])
 
     return (
         <>
@@ -12,7 +22,7 @@ export const OpenTrailer = () => {
                 isOpen={isOpen}
             >
                     <ReactPlayer
-                        src='https://www.youtube.com/watch?v=YihPA42fdQ8'
+                        src={url}
                         volume={0.25}
                         controls={true}
                         style={{width: '100%', height: '100%'}}

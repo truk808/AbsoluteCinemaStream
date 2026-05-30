@@ -1,5 +1,6 @@
 import {MainPage} from "../../pages/Main";
 import { ROUTES } from '../../shared/config/'
+import {MovieDetailsPage} from "../../pages/MovieInfo";
 
 export const routes = [
     {
@@ -7,7 +8,7 @@ export const routes = [
         element: <MainPage/>
     },
     {
-        path: "/",
-        element: <MainPage/>
+        path: `${ROUTES.FILM}/:id`,
+        element: <MovieDetailsPage/>
     },
 ]
