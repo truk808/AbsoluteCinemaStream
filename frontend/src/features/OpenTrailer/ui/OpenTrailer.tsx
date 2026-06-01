@@ -30,7 +30,7 @@ export const OpenTrailer = ({url, name, site}: OpenTrailerProps) => {
             </Modal>
             <button
                 onClick={() => {setIsOpen(true)}}
-                className="w-full flex-grow bg-[#fdc073] font-semibold text-base px-4 py-3.5 rounded-xl text-[#19120a] flex items-center justify-center gap-2 cursor-pointer hover:bg-[#eeb163] transition-colors">
+                className="w-full flex-grow bg-[#fdc073] font-semibold text-base px-4 py-3.5 rounded-xl text-bg flex items-center justify-center gap-2 cursor-pointer hover:bg-brand-primary transition-colors">
                 Смотреть трейлер
             </button>
         </>

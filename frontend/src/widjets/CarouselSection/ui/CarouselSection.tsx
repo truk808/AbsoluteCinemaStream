@@ -9,7 +9,7 @@ interface CarouselSectionProps {
 export const CarouselSection = ({title, films}: CarouselSectionProps) => {
     return (
         <div className='my-6'>
-            <h2 className='text-5xl font-black text-[#eedfd0] mb-5'>{title}</h2>
+            <h2 className='text-5xl font-black text-brand-text mb-5'>{title}</h2>
             <Carousel>
                 {
                     films.map(film => {

@@ -33,7 +33,7 @@ export const Carousel = ({ children }: CarouselProps) => {
             {/* md:flex — показываем только на десктопах, opacity-0 — прячем по умолчанию, проявляем при ховере */}
             <button
                 onClick={() => handleScroll('left')}
-                className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-black/70 border border-neutral-800 rounded-full items-center justify-center text-white text-xl font-medium opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-[#f39d0b] hover:text-neutral-950 hover:border-[#f39d0b] active:scale-90 shadow-lg focus:outline-none"
+                className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-black/70 border border-neutral-800 rounded-full items-center justify-center text-white text-xl font-medium opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-brand-primary hover:text-neutral-950 hover:border-brand-primary active:scale-90 shadow-lg focus:outline-none"
                 aria-label="Scroll left"
             >
                 ‹
@@ -56,7 +56,7 @@ export const Carousel = ({ children }: CarouselProps) => {
             {/* СТРЕЛОЧКА ВПРАВО */}
             <button
                 onClick={() => handleScroll('right')}
-                className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-black/70 border border-neutral-800 rounded-full items-center justify-center text-white text-xl font-medium opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-[#f39d0b] hover:text-neutral-950 hover:border-[#f39d0b] active:scale-90 shadow-lg focus:outline-none"
+                className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-black/70 border border-neutral-800 rounded-full items-center justify-center text-white text-xl font-medium opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-brand-primary hover:text-neutral-950 hover:border-brand-primary active:scale-90 shadow-lg focus:outline-none"
                 aria-label="Scroll right"
             >
                 ›

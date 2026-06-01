@@ -1,0 +1,1 @@
+export {RateFilm} from './ui/RateFilm.tsx'

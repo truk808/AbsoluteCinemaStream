@@ -5,6 +5,7 @@ import {fetchFilmById, fetchFilmTrailerById} from "./services.ts";
 export interface FilmState {
     error: string | null;
     isLoading: boolean;
+    filmCategories: Film[];
     currentFilm: Film | null;
     filmTrailer: Trailer | null;
 }
@@ -14,6 +15,7 @@ const initialState: FilmState = {
     isLoading: false,
     // filmTrailer: null,
     // currentFilm: null,
+    filmCategories: [],
     currentFilm: {
         "kinopoiskId": 301,
         "kinopoiskHDId": "4824a95e60a7db7e86f14137516ba590",
@@ -73,7 +75,7 @@ const initialState: FilmState = {
         "completed": false,
         "hasImax": false,
         "has3D": false,
-        "lastSync": new Date("2026-04-19T16:02:03.057916")
+        "lastSync": "2026-04-19T16:02:03.057916"
     },
     filmTrailer: {
         "total": 8,

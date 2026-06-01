@@ -18,6 +18,13 @@ export interface Film {
     year: number | null;
     ratingKinopoisk: number | null;
     ratingImdb: number | null;
+    coverUrl: string | null ;
+    logoUrl: string | null ;
+    ratingRfCritics?: number | null;
+    ratingRfCriticsVoteCount?: number | null;
+    editorAnnotation: string | null;
+    isTicketsAvailable: boolean;
+    endYear?: Date | null;
     imdbId?: string | null;
     slogan?: string | null;
     description?: string | null;
