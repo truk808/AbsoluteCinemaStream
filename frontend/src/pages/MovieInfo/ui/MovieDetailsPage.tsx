@@ -1,9 +1,9 @@
 import {HeroMovieInfo} from "../../../widjets/HeroMovieInfo";
-import {fetchFilmById, fetchFilmTrailerById} from "../../../entities/Film/model/services.ts";
 import {useParams} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import type {AppDispatch} from "../../../app/store";
 import {useEffect} from "react";
+import {fetchFilmById, fetchFilmTrailerById} from "../../../entities/Film";
 
 export const MovieDetailsPage = () => {
     const {id} = useParams<{ id: string }>();
@@ -22,4 +22,7 @@ export const MovieDetailsPage = () => {
         </div>
     );
 };
+
+
+
 

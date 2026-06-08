@@ -1,55 +1,25 @@
 // import {HeroBanner} from "../../../widjets/HeroBanner";
-import {NEW_FILMS} from '../../../consts.ts'
-
+// import {NEW_FILMS} from '../../../consts.ts'
 import {CarouselSection} from "../../../widjets/CarouselSection";
-import {FilmCard} from "../../../entities/Film";
-import {CardList} from "../../../shared/ui";
+import {selectFilmsCategory} from "../../../entities/Film/model/selectors.ts";
+import {useDispatch, useSelector} from "react-redux";
+import type {AppDispatch} from "../../../app/store";
+import {fetchFilmByCategory} from "../../../entities/Film/model/services/fetchFilmsByCategory.ts";
+import {useEffect} from "react";
+// import {FilmCard} from "../../../entities/Film";
 
 export const MainPage = () => {
+    const filmsCategory = useSelector(selectFilmsCategory);
+
+    const dispatch = useDispatch<AppDispatch>();
+
+    useEffect(() => {
+        dispatch(fetchFilmByCategory({category: 'TOP_POPULAR_ALL'}))
+    }, [dispatch]);
+
     return (
         <div className=''>
-            <CarouselSection title={'Попул'} films={NEW_FILMS.items}/>
-            <CardList>
-                {[
-                    <FilmCard film={NEW_FILMS.items[0]} />,
-                    <FilmCard film={NEW_FILMS.items[1]} />,
-                    <FilmCard film={NEW_FILMS.items[2]} />,
-                    <FilmCard film={NEW_FILMS.items[3]} />,
-                    <FilmCard film={NEW_FILMS.items[4]} />,
-                    <FilmCard film={NEW_FILMS.items[5]} />,
-                    <FilmCard film={NEW_FILMS.items[0]} />,
-                    <FilmCard film={NEW_FILMS.items[1]} />,
-                    <FilmCard film={NEW_FILMS.items[2]} />,
-                    <FilmCard film={NEW_FILMS.items[3]} />,
-                    <FilmCard film={NEW_FILMS.items[4]} />,
-                    <FilmCard film={NEW_FILMS.items[5]} />,
-                    <FilmCard film={NEW_FILMS.items[0]} />,
-                    <FilmCard film={NEW_FILMS.items[1]} />,
-                    <FilmCard film={NEW_FILMS.items[2]} />,
-                    <FilmCard film={NEW_FILMS.items[3]} />,
-                    <FilmCard film={NEW_FILMS.items[4]} />,
-                    <FilmCard film={NEW_FILMS.items[5]} />,
-                    <FilmCard film={NEW_FILMS.items[0]} />,
-                    <FilmCard film={NEW_FILMS.items[1]} />,
-                    <FilmCard film={NEW_FILMS.items[2]} />,
-                    <FilmCard film={NEW_FILMS.items[3]} />,
-                    <FilmCard film={NEW_FILMS.items[4]} />,
-                    <FilmCard film={NEW_FILMS.items[5]} />,
-                    <FilmCard film={NEW_FILMS.items[0]} />,
-                    <FilmCard film={NEW_FILMS.items[1]} />,
-                    <FilmCard film={NEW_FILMS.items[2]} />,
-                    <FilmCard film={NEW_FILMS.items[3]} />,
-                    <FilmCard film={NEW_FILMS.items[4]} />,
-                    <FilmCard film={NEW_FILMS.items[5]} />,
-                    <FilmCard film={NEW_FILMS.items[0]} />,
-                    <FilmCard film={NEW_FILMS.items[1]} />,
-                    <FilmCard film={NEW_FILMS.items[2]} />,
-                    <FilmCard film={NEW_FILMS.items[3]} />,
-                    <FilmCard film={NEW_FILMS.items[4]} />,
-                    <FilmCard film={NEW_FILMS.items[5]} />,
-                ]}
-
-            </CardList>
+            <CarouselSection title={'Попул'} films={filmsCategory['TOP_POPULAR_ALL']?.items || []}/>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import {Carousel} from "../../../shared/ui";
 interface CarouselSectionProps {
     title: string;
     films: Film[]
+    loadMore?: () => void;
 }
 
 export const CarouselSection = ({title, films}: CarouselSectionProps) => {
