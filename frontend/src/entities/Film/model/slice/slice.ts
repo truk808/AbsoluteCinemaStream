@@ -5,6 +5,9 @@ import {filmByIdBuilder} from "./extraReducers/filmByIdBuilder.ts";
 import {filmTrailerBuilder} from "./extraReducers/filmTrailerBuilder.ts";
 import {createSlice} from "@reduxjs/toolkit";
 import {filmByCategory} from "./extraReducers/filmByCategoryBuilder.ts";
+import {NEW_FILMS} from "../../../../consts.ts";
+import type {Search} from "../types/search.ts";
+import {filmSearchBuilder} from "./extraReducers/filmSearchBuilder.ts";
 
 export interface FilmState {
     error: string | null;
@@ -12,6 +15,7 @@ export interface FilmState {
     filmCategories: FilmCategories;
     currentFilm: Film | null;
     filmTrailer: Trailer | null;
+    filmsSearch: Search | null;
 }
 
 const initialState: FilmState = {
@@ -19,7 +23,40 @@ const initialState: FilmState = {
     isLoading: false,
     // filmTrailer: null,
     // currentFilm: null,
-    filmCategories: {},
+    // filmCategories: {},
+    filmsSearch: null,
+    // filmsSearch: {
+    //     "keyword": "мстители",
+    //     page: 1,
+    //     "pagesCount": 7,
+    //     "searchFilmsCountResult": 134,
+    //     "films": [
+    //         {
+    //             "filmId": 263531,
+    //             "nameRu": "Мстители",
+    //             "nameEn": "The Avengers",
+    //             "type": "FILM",
+    //             "year": "2012",
+    //             "description": "США, Джосс Уидон(фантастика)",
+    //             "filmLength": "2:17",
+    //             "countries": [
+    //                 {
+    //                     "country": "США"
+    //                 }
+    //             ],
+    //             "genres": [
+    //                 {
+    //                     "genre": "фантастика"
+    //                 }
+    //             ],
+    //             "rating": "NOTE!!! 7.9 for released film or 99% if film have not released yet",
+    //             "ratingVoteCount": 284245,
+    //             "posterUrl": "http://kinopoiskapiunofficial.tech/images/posters/kp/263531.jpg",
+    //             "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/301.jpg"
+    //         }
+    //     ]
+    // },
+    filmCategories: {'TOP_POPULAR_ALL' : NEW_FILMS},
     currentFilm: {
         "kinopoiskId": 301,
         "kinopoiskHDId": "4824a95e60a7db7e86f14137516ba590",
@@ -141,6 +178,7 @@ export const filmSlice = createSlice({
         filmByIdBuilder(builder);
         filmTrailerBuilder(builder);
         filmByCategory(builder);
+        filmSearchBuilder(builder);
     }
 })
 

@@ -20,7 +20,7 @@ export const ProfileHero = ({ user }: ProfileHeroProps) => {
         : "1 января 1000";
 
     return (
-        <div className="w-full max-w-[400px] md:max-w-[1200px] bg-brand-bg rounded-[32px] p-6 md:p-8 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 md:gap-8 mx-auto">
+        <div className="w-full max-w-[400px] md:max-w-[1200px] bg-brand-bg rounded-[32px] flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 md:gap-8 mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 w-full md:w-auto">
                 <div className="relative shrink-0">
                     <div className="w-32 h-32 md:w-36 md:h-36 rounded-[24px] md:rounded-[28px] overflow-hidden border border-neutral-800">

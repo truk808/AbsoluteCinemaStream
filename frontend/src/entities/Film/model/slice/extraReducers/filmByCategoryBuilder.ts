@@ -7,8 +7,6 @@ export const filmByCategory = (builder: ActionReducerMapBuilder<FilmState>) => {
         .addCase(fetchFilmByCategory.fulfilled, (state, action) => {
             const { items, totalPages, category, page, total } = action.payload;
 
-            console.log()
-
             if (!state.filmCategories[category]) {
                 state.filmCategories[category] = {
                     category,

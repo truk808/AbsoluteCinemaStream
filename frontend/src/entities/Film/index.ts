@@ -1,4 +1,4 @@
-export {selectCurrentFilm, selectFilmTrailer, selectIsLoading, selectError} from "./model/selectors.ts";
+export {selectCurrentFilm, selectFilmTrailer, selectIsLoading, selectError, selectFilmsSearch, selectFilmsCategory} from "./model/selectors.ts";
 
 export {getFilmById, getFilmsByCategory, getFilmTrailerById} from './api/filmApi.ts'
 
@@ -13,4 +13,5 @@ export type { Trailer } from './model/types/trailer.ts'
 export {fetchFilmByCategory} from './model/services/fetchFilmsByCategory.ts'
 export {fetchFilmById} from './model/services/fetchFilmById.ts'
 export {fetchFilmTrailerById} from './model/services/fetchFilmTrailerById.ts'
+export {fetchFilmsByKeywords} from './model/services/fetchFilmsByKeywords.ts'
 

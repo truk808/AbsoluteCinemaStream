@@ -1,9 +1,11 @@
 import type {Film} from "./entities/Film";
 
 export const NEW_FILMS = {
+    "category": 'NEW_FILMS',
+    page: 1,
     "total": 700,
     "totalPages": 35,
-    "items": [
+    items: [
         {
             "kinopoiskId": 5437609,
             "imdbId": null,
@@ -733,3 +735,32 @@ export const RATING_FILMS: Record<number, { film: Film; score: number }> = {
         }
     },
 };
+
+export const SEARCH_FILMS = {
+    "total": 200,
+    "totalPages": 7,
+    "items": [
+        {
+            "kinopoiskId": 263531,
+            "nameRu": "Мстители",
+            "nameEn": "The Avengers",
+            "nameOriginal": "The Avengers",
+            "countries": [
+                {
+                    "country": "США"
+                }
+            ],
+            "genres": [
+                {
+                    "genre": "фантастика"
+                }
+            ],
+            "ratingKinopoisk": 7.9,
+            "ratingImbd": 7.9,
+            "year": "2012",
+            "type": "FILM",
+            "posterUrl": "http://kinopoiskapiunofficial.tech/images/posters/kp/263531.jpg",
+            "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/301.jpg"
+        }
+    ]
+}

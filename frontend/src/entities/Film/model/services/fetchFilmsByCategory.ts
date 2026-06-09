@@ -14,14 +14,16 @@ export const fetchFilmByCategory = createAsyncThunk<PaginatedCategory, FetchCate
         try {
             const data = await getFilmsByCategory(category, page);
 
-            console.log('fetchFilmByCategory', data)
+            if (page > data.length) {
+                return rejectWithValue('Запрашиваемая страница не существует')
+            };
 
             return {
                 category,
                 page,
                 items: data.items || [],
                 total: data.total || 0,
-                totalPages: data.total || 0,
+                totalPages: data.totalPages || 0,
             }
         } catch (error) {
             const err = error as AxiosError<{ message: string }>;

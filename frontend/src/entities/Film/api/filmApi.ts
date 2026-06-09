@@ -16,3 +16,10 @@ export const getFilmsByCategory = async (type: string = 'TOP_POPULAR_ALL',  page
     });
     return data;
 }
+
+export const getFilmsByKeywords = async (keyword: string, page: number = 1) => {
+    const { data } = await $kinopoiskHost.get('/api/v2.1/films/search-by-keyword', {
+        params: { keyword, page }
+    });
+    return data;
+}

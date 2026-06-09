@@ -19,7 +19,6 @@ export const ProfileTabs = ({watchList, ratings}: ProfileTabsProps) => {
                         }
                     </CardList>
                 </Tabs.Panel>
-
                 <Tabs.Panel>
                     <CardList>
                         {
@@ -36,7 +35,6 @@ export const ProfileTabs = ({watchList, ratings}: ProfileTabsProps) => {
                         }
                     </CardList>
                 </Tabs.Panel>
-
             </Tabs>
         </div>
     );

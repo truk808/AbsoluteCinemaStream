@@ -12,7 +12,7 @@ export const Tabs = ({ titles, children }: TabsProps) => {
 
     return (
         <div className="w-full flex flex-col gap-6">
-            <div className="flex gap-8 pb-2.5 scrollbar-none">
+            <div className="flex gap-8 pb-2.5 scrollbar-none justify-center">
                 {titles.map((title, index) => {
                     const isActive = index === activeIndex;
                     return (
