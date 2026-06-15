@@ -14,7 +14,7 @@ export const SearchPage = () => {
     useEffect(() => {
         console.log('keyword', keyword);
         if (keyword) {
-            dispatch(fetchFilmsByKeywords({keyword}))
+            // dispatch(fetchFilmsByKeywords({keyword}))
         }
     }, [dispatch]);
 

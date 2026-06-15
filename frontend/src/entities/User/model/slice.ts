@@ -1,6 +1,7 @@
 import type {User} from "./type.ts";
 import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 import type {Film} from "../../Film";
+import {RATING_FILMS, WATCHLIST} from "../../../consts.ts";
 
 export interface UserState {
     user: User;
@@ -20,8 +21,10 @@ const initialState: UserState = {
         dateRegistration: new Date("2026-04-19T16:02:03.057916"),
     },
     isAuth: true,
-    watchlist: [],
-    ratings: {}
+    // watchlist: [],
+    // ratings: {},
+    watchlist: WATCHLIST,
+    ratings: RATING_FILMS,
 }
 
 export const userSlice = createSlice({
@@ -33,8 +36,6 @@ export const userSlice = createSlice({
         },
         addFilmInRatings: (state: UserState, action: PayloadAction<{film: Film, score: number}>) => {
             const { film, score } = action.payload;
-
-            console.log('kinopoiskId', film)
 
             state.ratings[film.kinopoiskId] = {
                 film: film,

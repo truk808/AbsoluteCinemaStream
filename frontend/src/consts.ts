@@ -690,7 +690,7 @@ export const RATING_FILMS: Record<number, { film: Film; score: number }> = {
             "kinopoiskId": 301,
             "kinopoiskHDId": "4824a95e60a7db7e86f14137516ba590",
             "imdbId": "tt0133093",
-            "nameRu": "Матрица",
+            "nameRu": "Остров",
             "nameEn": null,
             "nameOriginal": "The Matrix",
             "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/301.jpg",
@@ -764,3 +764,78 @@ export const SEARCH_FILMS = {
         }
     ]
 }
+
+export const WATCHLIST: Film[] = [
+    {
+        "kinopoiskId": 5437609,
+        "imdbId": null,
+        "nameRu": "Грязные деньги",
+        "nameEn": null,
+        "nameOriginal": "In the Grey",
+        "countries": [
+            {
+                "country": "США"
+            },
+            {
+                "country": "Великобритания"
+            }
+        ],
+        "genres": [
+            {
+                "genre": "триллер"
+            },
+            {
+                "genre": "боевик"
+            }
+        ],
+        "ratingKinopoisk": null,
+        "ratingImdb": null,
+        "year": 2026,
+        "type": "FILM",
+        "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5437609.jpg",
+        "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5437609.jpg",
+        "coverUrl": "https://avatars.mds.yandex.net/get-ott/1672343/2a0000019d1aa3aec91dcfd39f4af58771c1/orig",
+        "logoUrl": null,
+        "description": "Когда безжалостный магнат Салазар присваивает себе миллиард долларов, отряд элитных агентов под управлением проницательной Рэйчел получает задание вернуть деньги любой ценой. Сид, Бронко и их соратники начинают воплощать стратегию давления на афериста, а затем отправляются на остров Салазара, где проявляют все свои навыки обращения с оружием и взрывчаткой. Однако внезапно ситуация выходит из-под контроля.",
+        "ratingAgeLimits": "age18"
+    },
+    {
+        "kinopoiskId": 460586,
+        "imdbId": "tt1190634",
+        "nameRu": "Пацаны",
+        "nameEn": null,
+        "nameOriginal": "The Boys",
+        "countries": [
+            {
+                "country": "США"
+            }
+        ],
+        "genres": [
+            {
+                "genre": "драма"
+            },
+            {
+                "genre": "криминал"
+            },
+            {
+                "genre": "фантастика"
+            },
+            {
+                "genre": "боевик"
+            },
+            {
+                "genre": "комедия"
+            }
+        ],
+        "ratingKinopoisk": 8.3,
+        "ratingImdb": 8.6,
+        "year": 2019,
+        "type": "TV_SERIES",
+        "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/460586.jpg",
+        "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/460586.jpg",
+        "coverUrl": "https://avatars.mds.yandex.net/get-ott/2419418/2a0000017c0791e438d10a65d3d63c4381b9/orig",
+        "logoUrl": "https://avatars.mds.yandex.net/get-ott/239697/2a00000177bb06c2c5827c6e25944e2f31fb/orig",
+        "description": "Супергерои являются настоящими звездами. Их все знают и обожают. Но за идеальным фасадом скрывается мрачный мир наркотиков и секса, а большинство героев в жизни не самые приятные люди. Противостоит им отряд, неофициально известный как «Пацаны».",
+        "ratingAgeLimits": "age18"
+    },
+]
