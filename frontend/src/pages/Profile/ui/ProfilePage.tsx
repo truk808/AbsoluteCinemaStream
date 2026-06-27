@@ -15,7 +15,7 @@ export const ProfilePage = () => {
 
     return (
         <div>
-            <ProfileHero user={user}/>
+            <ProfileHero user={user} ratings={ratings} />
             <ProfileTabs ratings={ratings} watchList={watchList}/>
         </div>
     );

@@ -40,7 +40,7 @@ export const ProfileTabs = ({watchList, ratings}: ProfileTabsProps) => {
                     <CardList>
                         {
                             filterAndSortWatchList.map((film) => {
-                                return <FilmCard film={film}/>
+                                return <FilmCard key={film.kinopoiskId} film={film}/>
                             })
                         }
                     </CardList>

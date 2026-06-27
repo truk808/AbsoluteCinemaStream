@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 import type {AppDispatch} from "../../../app/store";
 // import {fetchFilmByCategory} from "../../../entities/Film/model/services/fetchFilmsByCategory.ts";
 import {useEffect} from "react";
+import {CardList} from "../../../shared/ui";
+import {fetchFilmByCategory, FilmCard} from "../../../entities/Film";
 
 export const MainPage = () => {
     const filmsCategory = useSelector(selectFilmsCategory);
@@ -11,8 +13,9 @@ export const MainPage = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        // dispatch(fetchFilmByCategory({category: 'TOP_POPULAR_ALL'}))
-        // dispatch(fetchFilmByCategory({category: 'ZOMBIE_THEME'}))
+        dispatch(fetchFilmByCategory({category: 'TOP_POPULAR_ALL'}))
+        dispatch(fetchFilmByCategory({category: 'ZOMBIE_THEME'}))
+        dispatch(fetchFilmByCategory({category: 'COMICS_THEME'}))
     }, [dispatch]);
 
     useEffect(() => {
@@ -21,7 +24,15 @@ export const MainPage = () => {
 
     return (
         <div className=''>
-            <CarouselSection title={'Попул'} films={filmsCategory['TOP_POPULAR_ALL']?.items || []}/>
+            <CardList show={'portion'}>
+                {
+
+                    filmsCategory['TOP_POPULAR_ALL']?.items?.map((film) => {
+                        return <FilmCard film={film} />
+                    })
+                }
+            </CardList>
+            <CarouselSection title={'Комедии'} films={filmsCategory['COMICS_THEME']?.items || []}/>
             <CarouselSection title={'Зондбэ'} films={filmsCategory['ZOMBIE_THEME']?.items || []}/>
         </div>
     );
