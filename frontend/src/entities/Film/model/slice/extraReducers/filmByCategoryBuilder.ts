@@ -16,6 +16,7 @@ export const filmByCategory = (builder: ActionReducerMapBuilder<FilmState>) => {
                     total,
                 };
             } else {
+                console.log(state.filmCategories[category].items)
                 state.filmCategories[category].items = [
                     ...state.filmCategories[category].items,
                     ...items

@@ -14,8 +14,8 @@ export const MainPage = () => {
 
     useEffect(() => {
         dispatch(fetchFilmByCategory({category: 'TOP_POPULAR_ALL'}))
-        dispatch(fetchFilmByCategory({category: 'ZOMBIE_THEME'}))
-        dispatch(fetchFilmByCategory({category: 'COMICS_THEME'}))
+        // dispatch(fetchFilmByCategory({category: 'ZOMBIE_THEME'}))
+        // dispatch(fetchFilmByCategory({category: 'COMICS_THEME'}))
     }, [dispatch]);
 
     useEffect(() => {
