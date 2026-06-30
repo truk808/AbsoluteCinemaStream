@@ -4,6 +4,7 @@ import { Navigation } from "./Navigation";
 import { SearchInput } from "./SearchInput";
 import {ROUTES} from "../../../shared/config";
 import {BurgerMenu} from "./BurgerMenu.tsx";
+import {FilterModal} from "../../../features/FilterModal";
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +24,7 @@ export const Header = () => {
                     <Navigation className="hidden md:flex gap-6 text-neutral-300 font-medium" />
 
                     <div className='hidden md:flex items-center gap-4'>
+                        <FilterModal />
                         <SearchInput />
                         <NavLink to={ROUTES.PROFILE}>
                             <span className='cursor-pointer text-xl hover:text-brand-primary transition-colors'>👨‍🦲</span>

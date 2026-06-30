@@ -22,8 +22,8 @@ export interface Film {
     logoUrl: string | null ;
     ratingRfCritics?: number | null;
     ratingRfCriticsVoteCount?: number | null;
-    editorAnnotation: string | null;
-    isTicketsAvailable: boolean;
+    editorAnnotation?: string | null;
+    isTicketsAvailable?: boolean;
     endYear?: Date | null;
     imdbId?: string | null;
     slogan?: string | null;

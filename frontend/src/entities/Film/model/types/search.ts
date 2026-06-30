@@ -1,5 +1,5 @@
 export interface Search {
-    keyword: string;
+    keyword?: string;
     pagesCount: number;
     page: number;
     films: SearchFilm[];

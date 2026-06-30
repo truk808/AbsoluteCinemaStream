@@ -3,16 +3,17 @@ import {useState} from "react";
 interface CardListProps {
     children: React.ReactNode[];
     show?: 'all' | 'portion';
+    addItem: () => void
 }
 
-export const CardList = ({children, show = 'all'}: CardListProps) => {
+export const CardList = ({children, show = 'all', addItem}: CardListProps) => {
     const [portion, setPortion] = useState(show === "all" ? children.length : 5);
 
     function onClick() {
         if (children?.length === portion) {
             addItem()
         } else {
-            setPortion(setPortion();
+            setPortion(children?.length);
         }
     }
 

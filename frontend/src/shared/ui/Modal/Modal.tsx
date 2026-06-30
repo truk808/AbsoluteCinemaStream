@@ -12,8 +12,8 @@ export const Modal = ({isOpen, onClose, children}: ModalProps) => {
             className={["fixed top-0 left-0 z-50 w-[100vw] h-[100vh] flex items-center justify-center transition-all", isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'].join(" ")}
             onClick={onClose}
         >
-            <div className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300" />
-            <div className='bg-neutral-950 z-51 w-full h-full max-w-[70vw] max-h-[70vh] rounded-lg'
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300" />
+            <div className='bg-neutral-950 z-10 h-full max-w-[70vw] max-h-[70vh] rounded-lg'
                  onClick={(e) => {e.stopPropagation()}}
             >
                 <button
