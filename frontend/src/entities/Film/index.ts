@@ -13,5 +13,5 @@ export type { Trailer } from './model/types/trailer.ts'
 export {fetchFilmByCategory} from './model/services/fetchFilmsByCategory.ts'
 export {fetchFilmById} from './model/services/fetchFilmById.ts'
 export {fetchFilmTrailerById} from './model/services/fetchFilmTrailerById.ts'
-export {fetchFilmsByKeywords} from './model/services/fetchFilmsByKeywords.ts'
+export {fetchFilmsByFilter} from './model/services/fetchFilmsByFilter.ts'
 

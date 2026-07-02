@@ -1,31 +1,44 @@
 export interface Search {
-    keyword?: string;
-    pagesCount: number;
+    total: number;
+    totalPages: number;
     page: number;
-    films: SearchFilm[];
-    searchFilmsCountResult: number;
+    items: SearchFilm[];
 }
 
-export interface SearchFilm {
-    filmId: number;
-    nameRu: string;
-    nameEn: string;
-    type: string;
-    year: string;
-    description: string;
-    filmLength: string;
-    countries: Country[];
-    genres: Genre[];
-    rating: string;
-    ratingVoteCount: number;
-    posterUrl: string;
-    posterUrlPreview: string;
+export interface FetchCategoryArgs {
+    countries?: number;
+    genres?: number;
+    order?: 'RATING' | 'NUM_VOTE' | 'YEAR';
+    type?: 'FILM' | 'TV_SHOW' | 'TV_SERIES' | 'MINI_SERIES' | 'ALL';
+    ratingFrom?: number;
+    ratingTo?: number;
+    yearFrom?: number;
+    yearTo?: number;
+    imdbId?: string;
+    keyword?: string;
+    page?: number;
 }
 
-export interface Country {
+interface Country {
     country: string;
 }
 
-export interface Genre {
+interface Genre {
     genre: string;
+}
+
+export interface SearchFilm {
+    kinopoiskId: number;
+    imdbId: string;
+    nameRu: string;
+    nameEn: string;
+    nameOriginal: string;
+    countries: Country[];
+    genres: Genre[];
+    ratingKinopoisk: number;
+    ratingImdb: number;
+    year: number;
+    type: string;
+    posterUrl: string;
+    posterUrlPreview: string;
 }
