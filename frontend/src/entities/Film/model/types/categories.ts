@@ -2,9 +2,11 @@ import type {Film} from './film.ts'
 
 export type FilmCategories = Record<string, PaginatedCategory>
 
-export interface PaginatedCategory extends CategoryData {
-    category: string
+export type PaginatedCategory = Record<number, CategoryData>
+
+export interface PaginatedCategoryData extends CategoryData {
     page: number
+    category: string
 }
 
 export interface CategoryData {
@@ -19,3 +21,4 @@ export interface CategoryData {
 //     total: 12,
 //     totalPages: 0,
 // };
+

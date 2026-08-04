@@ -1,46 +1,45 @@
-import {CarouselSection} from "../../../widjets/CarouselSection";
-import {selectFilmsCategory} from "../../../entities/Film/model/selectors.ts";
-import {useDispatch, useSelector} from "react-redux";
-import type {AppDispatch} from "../../../app/store";
-// import {fetchFilmByCategory} from "../../../entities/Film/model/services/fetchFilmsByCategory.ts";
-import {useEffect} from "react";
-import {CardList} from "../../../shared/ui";
-import {fetchFilmByCategory, FilmCard} from "../../../entities/Film";
+import { selectFilmsCategory } from "../../../entities/Film/model/selectors.ts";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch } from "../../../app/store";
+import { useEffect } from "react";
+import { CardList } from "../../../shared/ui";
+import { fetchFilmByCategory, FilmCard } from "../../../entities/Film";
 
 export const MainPage = () => {
     const filmsCategory = useSelector(selectFilmsCategory);
-
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        // dispatch(fetchFilmByCategory({category: 'TOP_POPULAR_ALL'}))
-        // dispatch(fetchFilmByCategory({category: 'ZOMBIE_THEME'}))
-        // dispatch(fetchFilmByCategory({category: 'COMICS_THEME'}))
+        dispatch(fetchFilmByCategory({ category: 'TOP_POPULAR_ALL', page: 1 }));
     }, [dispatch]);
 
-    useEffect(() => {
-        console.log(filmsCategory['TOP_POPULAR_ALL']?.items)
-    }, [filmsCategory]);
-
     function addFilms() {
-        dispatch(fetchFilmByCategory({category: 'TOP_POPULAR_ALL', page: 2}))
+        const loadedPagesCount = Object.keys(filmsCategory['TOP_POPULAR_ALL'] || {}).length;
+        const nextPage = loadedPagesCount + 1;
+
+        dispatch(fetchFilmByCategory({ category: 'TOP_POPULAR_ALL', page: nextPage }));
     }
 
     return (
         <div className=''>
+            <h1 className='text-4xl text-red-800'>defwegfwreg43</h1>
             <CardList
                 show={'portion'}
                 addItem={addFilms}
             >
-                {
-
-                    filmsCategory['TOP_POPULAR_ALL']?.items?.map((film) => {
-                        return <FilmCard film={film} />
-                    })
-                }
+                {Object.values(filmsCategory['TOP_POPULAR_ALL'] || {}).flatMap((categoryData) => {
+                    return categoryData.items.map((film) => {
+                        return (
+                            <FilmCard
+                                key={film.kinopoiskId || film.imdbId}
+                                film={film}
+                            />
+                        );
+                    });
+                })}
             </CardList>
-            <CarouselSection title={'Комедии'} films={filmsCategory['COMICS_THEME']?.items || []}/>
-            <CarouselSection title={'Зондбэ'} films={filmsCategory['ZOMBIE_THEME']?.items || []}/>
+            {/*<CarouselSection title={'Комедии'} films={filmsCategory['COMICS_THEME']?.items || []}/>*/}
+            {/*<CarouselSection title={'Зондбэ'} films={filmsCategory['ZOMBIE_THEME']?.items || []}/>*/}
         </div>
     );
 };

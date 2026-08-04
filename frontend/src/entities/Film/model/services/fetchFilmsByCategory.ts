@@ -1,20 +1,20 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {getFilmsByCategory} from "../../api/filmApi.ts";
 import type {AxiosError} from "axios";
-import type {PaginatedCategory} from "../types/categories.ts";
+import type {PaginatedCategoryData} from "../types/categories.ts";
 
 interface FetchCategoryArgs {
     category: string;
     page?: number;
 }
 
-export const fetchFilmByCategory = createAsyncThunk<PaginatedCategory, FetchCategoryArgs , { rejectValue: string }>(
+export const fetchFilmByCategory = createAsyncThunk<PaginatedCategoryData, FetchCategoryArgs , { rejectValue: string }>(
     'film/FilmByCategory',
     async ({category, page = 1}, { rejectWithValue }) => {
         try {
             const data = await getFilmsByCategory(category, page);
 
-            if (page > data.length) {
+            if (page > data.totalPages) {
                 return rejectWithValue('Запрашиваемая страница не существует')
             };
 
