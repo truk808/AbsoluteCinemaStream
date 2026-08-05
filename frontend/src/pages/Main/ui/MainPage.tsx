@@ -22,7 +22,7 @@ export const MainPage = () => {
 
     return (
         <div className=''>
-            <h1 className='text-4xl text-red-800'>defwegfwreg43</h1>
+            <h1 className='m-6 text-6xl text-center text-brand-text'>Популярное</h1>
             <CardList
                 show={'portion'}
                 addItem={addFilms}

@@ -12,19 +12,16 @@ import {CURRENTFIM, FILMCATEGORIES, FILMSEARCH, FILMTRAILER} from "../../../../c
 
 export interface FilmState {
     isFilmLoading: boolean;
-    isSearchLoading: boolean;
     isTrailerLoading: boolean;
-    categoriesLoading: Record<string, boolean>;
+    categoriesLoading: Record<string, Record<number, boolean>>;
     error: string | null;
     filmCategories: FilmCategories;
     currentFilm: Film | null;
     filmTrailer: Trailer | null;
-    filmsSearch: Search | null;
 }
 
 const initialState: FilmState = {
     isFilmLoading: true,
-    isSearchLoading: true,
     isTrailerLoading: true,
     categoriesLoading: {},
     error: null,
@@ -32,7 +29,6 @@ const initialState: FilmState = {
     // filmTrailer: null,
     filmCategories: {},
     // currentFilm: null,
-    filmsSearch: FILMSEARCH,
     filmTrailer: FILMTRAILER,
     // filmCategories: FILMCATEGORIES,
     currentFilm: CURRENTFIM,
@@ -45,7 +41,15 @@ export const filmSlice = createSlice({
         clearCurrentFilm: (state) => {
             state.currentFilm = null;
             state.filmTrailer = null;
-        }
+        },
+        clearSearchCategory: (state) => {
+            if (state.filmCategories["SEARCH"]) {
+                delete state.filmCategories["SEARCH"];
+            }
+            if (state.categoriesLoading["SEARCH"]) {
+                delete state.categoriesLoading["SEARCH"];
+            }
+        },
     },
     extraReducers: (builder) => {
         filmByIdBuilder(builder);
@@ -55,6 +59,6 @@ export const filmSlice = createSlice({
     }
 })
 
-export const {clearCurrentFilm} = filmSlice.actions;
+export const {clearCurrentFilm, clearSearchCategory} = filmSlice.actions;
 export const filmReducer = filmSlice.reducer;
 

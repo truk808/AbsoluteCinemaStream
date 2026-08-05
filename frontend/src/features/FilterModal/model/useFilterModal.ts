@@ -15,10 +15,14 @@ export const useFilterModal = () => {
 
     const [searchValue, setSearchValue] = useState<string>('');
 
+    const [page, setPage] = useState<number>(1);
+
     const navigate = useNavigate();
 
     function handleOnClick() {
         const params = new URLSearchParams();
+
+        params.append('page', `${page}`)
 
         if (searchValue.trim()) {
             params.append('keyword', searchValue.trim());
@@ -51,6 +55,8 @@ export const useFilterModal = () => {
         }
 
         setIsOpen(false);
+
+        console.log(`url ${ROUTES.SEARCH}?${params.toString()}`)
 
         navigate(`${ROUTES.SEARCH}?${params.toString()}`);
     }

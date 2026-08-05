@@ -8,6 +8,7 @@ export const fetchFilmsByFilter = createAsyncThunk<Search, FetchCategoryArgs, { 
     'film/FilmsByKeywords',
     async (args, { rejectWithValue }) => {
         try {
+            console.log('запрос getFilmsByFilter')
             const data = await getFilmsByFilter(args);
             return {
                 total: data.total,

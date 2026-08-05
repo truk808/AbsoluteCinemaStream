@@ -7,6 +7,7 @@ interface StateWithFilm {
 export const selectCurrentFilm = (state: StateWithFilm) => state.film.currentFilm;
 export const selectFilmTrailer = (state: StateWithFilm) => state.film.filmTrailer;
 export const selectFilmsCategory = (state: StateWithFilm) => state.film.filmCategories;
-export const selectFilmsSearch = (state: StateWithFilm) => state.film.filmsSearch;
-export const selectIsLoading = (state: StateWithFilm) => state.film.isLoading;
 export const selectError = (state: StateWithFilm) => state.film.error;
+
+export const categoriesLoading = (state: StateWithFilm) => state.film.categoriesLoading;
+export const isFilmLoading = (state: StateWithFilm) => state.film.isFilmLoading

@@ -1,25 +1,23 @@
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFilmsByFilter, selectFilmsSearch } from "../../../entities/Film";
-import { useEffect } from "react";
+import { fetchFilmsByFilter, selectFilmsCategory, clearSearchCategory } from "../../../entities/Film";
+import { useEffect, useMemo } from "react";
 import { FilmCardHorizontal } from "../../../entities/Film/ui/FilmCardHorizontal.tsx";
 import type { AppDispatch } from "../../../app/store";
-import type { FetchCategoryArgs } from "../../../entities/Film/model/types/search.ts";
 
 export const SearchPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
+
     const dispatch = useDispatch<AppDispatch>();
-    const filmsSearch = useSelector(selectFilmsSearch);
+    const filmsCategory = useSelector(selectFilmsCategory)['SEARCH'];
 
-    const currentPage = filmsSearch?.page || 1;
-    const totalPages = filmsSearch?.totalPages || 1;
+    const currentPage = Number(searchParams.get("page")) || 1;
 
-    useEffect(() => {
+    const baseParams = useMemo(() => {
         const params = Object.fromEntries(searchParams.entries());
 
-        const fetchArgs: FetchCategoryArgs = {
+        return {
             keyword: params.keyword || undefined,
-            page: params.page ? Number(params.page) : 1,
             countries: params.countries ? Number(params.countries) : undefined,
             genres: params.genres ? Number(params.genres) : undefined,
             order: params.order as 'RATING' | 'NUM_VOTE' | 'YEAR' | undefined,
@@ -29,16 +27,30 @@ export const SearchPage = () => {
             yearFrom: params.yearFrom ? Number(params.yearFrom) : undefined,
             yearTo: params.yearTo ? Number(params.yearTo) : undefined,
         };
+    }, [searchParams]);
 
-        dispatch(fetchFilmsByFilter(fetchArgs));
-    }, [dispatch, searchParams]);
+    const baseParamsString = JSON.stringify(baseParams);
+
+    useEffect(() => {
+        dispatch(clearSearchCategory());
+    }, [dispatch, baseParamsString]);
+
+    useEffect(() => {
+        if (!filmsCategory?.[currentPage]) {
+            dispatch(fetchFilmsByFilter({ ...baseParams, page: currentPage }));
+        }
+    }, [dispatch, currentPage, baseParams, filmsCategory]);
+
+    const showingFilm = filmsCategory?.[currentPage];
 
     const handlePageChange = (newPage: number) => {
-        if (newPage < 1 || newPage > totalPages) return;
+        if (newPage < 1) return;
 
-        const nextParams = new URLSearchParams(searchParams);
-        nextParams.set('page', String(newPage));
-        setSearchParams(nextParams);
+        setSearchParams((prevParams) => {
+            const nextParams = new URLSearchParams(prevParams);
+            nextParams.set("page", String(newPage));
+            return nextParams;
+        });
     };
 
     return (
@@ -48,44 +60,29 @@ export const SearchPage = () => {
                     Возможно, вы искали
                 </h1>
 
-                {filmsSearch?.items?.length === 0 && (
-                    <div className="text-brand-text-muted text-center py-10">
-                        Ничего не найдено по заданным фильтрам
-                    </div>
-                )}
-
                 <div className="flex flex-col gap-4">
-                    {filmsSearch?.items?.map((item) => (
-                        <FilmCardHorizontal key={item.kinopoiskId} film={item} />
+                    {showingFilm?.items.map((film) => (
+                        <FilmCardHorizontal key={film.kinopoiskId} film={film} />
                     ))}
                 </div>
             </div>
 
-            {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-2 mt-8">
-                    <button
-                        onClick={() => handlePageChange(currentPage - 1)}
-                        disabled={currentPage === 1}
-                        className="px-4 py-2 border rounded-md text-brand-text disabled:opacity-50 disabled:cursor-not-allowed hover:bg-neutral-100 transition-colors"
-                    >
-                        Назад
-                    </button>
-
-                    <div className="flex items-center gap-1 text-brand-text font-medium px-4">
-                        <span>{currentPage}</span>
-                        <span className="text-neutral-400">/</span>
-                        <span className="text-neutral-400">{totalPages}</span>
-                    </div>
-
-                    <button
-                        onClick={() => handlePageChange(currentPage + 1)}
-                        disabled={currentPage === totalPages}
-                        className="px-4 py-2 border rounded-md text-brand-text disabled:opacity-50 disabled:cursor-not-allowed hover:bg-neutral-100 transition-colors"
-                    >
-                        Вперед
-                    </button>
-                </div>
-            )}
+            <div className="text-brand-text text-2xl font-medium mb-6 flex gap-4">
+                <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage <= 1}
+                    className="disabled:opacity-50 cursor-pointer"
+                >
+                    назад
+                </button>
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={showingFilm && currentPage >= showingFilm.totalPages}
+                    className="disabled:opacity-50 cursor-pointer"
+                >
+                    вперед
+                </button>
+            </div>
         </div>
     );
 };

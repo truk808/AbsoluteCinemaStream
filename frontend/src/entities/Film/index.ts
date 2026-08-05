@@ -1,8 +1,8 @@
-export {selectCurrentFilm, selectFilmTrailer, selectIsLoading, selectError, selectFilmsSearch, selectFilmsCategory} from "./model/selectors.ts";
+export {selectCurrentFilm, selectFilmTrailer, selectError, selectFilmsCategory, categoriesLoading, isFilmLoading} from "./model/selectors.ts";
 
 export {getFilmById, getFilmsByCategory, getFilmTrailerById} from './api/filmApi.ts'
 
-export { filmReducer, clearCurrentFilm } from './model/slice/slice.ts'
+export { filmReducer, clearCurrentFilm, clearSearchCategory} from './model/slice/slice.ts'
 
 export {FilmCard} from './ui/FilmCard.tsx'
 
