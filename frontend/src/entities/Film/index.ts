@@ -1,4 +1,4 @@
-export {selectCurrentFilm, selectFilmTrailer, selectError, selectFilmsCategory, categoriesLoading, isFilmLoading} from "./model/selectors.ts";
+export {selectCurrentFilm, selectFilmTrailer, selectError, selectFilmsCategory, categoriesLoading, isFilmLoading, selectIsLoadingStaff, selectStaff} from "./model/selectors.ts";
 
 export {getFilmById, getFilmsByCategory, getFilmTrailerById} from './api/filmApi.ts'
 

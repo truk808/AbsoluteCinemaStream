@@ -8,20 +8,34 @@ export const HeroMovieDescription = ({film}: {film: Film}) => {
                     <h1 className="text-4xl md:text-6xl text-brand-text font-bold tracking-tight">{film.nameRu}</h1>
                     <div
                         className="text-lg md:text-xl text-brand-text/70 font-medium flex flex-wrap gap-2 justify-center md:justify-start mt-2">
-                        <span>{film.nameEn}</span>
+                        <span>{film.nameOriginal}</span>
                         <span>•</span>
                         <span>{film.year}</span>
                         <span>•</span>
-                        {film.countries.map(() => {
-                            return <span> country </span>
+                        {film.countries.map((country) => {
+                            return (
+                                <span> {country.country} </span>
+                            )
                         })}
+                        {
+                            film.filmLength && (
+                                <>
+                                    <span>•</span>
+                                    <span>{`${Math.floor(film.filmLength / 60)}ч ${film.filmLength - Math.floor(film.filmLength / 60) * 60}мин`}</span>
+                                </>
+                            )
+                        }
+
                     </div>
                 </div>
-
-                <div className="self-center md:self-start bg-brand-primary px-5 py-3 rounded-xl flex flex-col items-center justify-center text-brand-bg min-w-[100px] shadow-lg">
-                    <span className="text-xs font-bold uppercase tracking-wider opacity-70">Cine Rating</span>
-                    <span className="text-3xl font-black">{film.ratingKinopoisk}</span>
-                </div>
+                {
+                    film.ratingKinopoisk && (
+                        <div className="self-center md:self-start bg-brand-primary px-5 py-3 rounded-xl flex flex-col items-center justify-center text-brand-bg min-w-[100px] shadow-lg">
+                            <span className="text-xs font-bold uppercase tracking-wider opacity-70">Cine Rating</span>
+                            <span className="text-3xl font-black">{film.ratingKinopoisk}</span>
+                        </div>
+                    )
+                }
             </div>
 
             <div className="flex flex-wrap gap-2 text-brand-text">
@@ -38,7 +52,7 @@ export const HeroMovieDescription = ({film}: {film: Film}) => {
             <div className="w-full border-t border-white/5 pt-6">
                 <h4 className="text-brand-primary text-xl font-bold mb-3">О фильме</h4>
                 <p className="text-brand-text-muted text-base md:text-lg leading-relaxed font-normal opacity-90">
-                    {film.shortDescription}
+                    {film.description}
                 </p>
             </div>
         </div>

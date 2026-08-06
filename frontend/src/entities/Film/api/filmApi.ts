@@ -21,3 +21,9 @@ export const getFilmsByFilter = async (params: Record<string, any>) => {
     const { data } = await $kinopoiskHost.get('/api/v2.2/films', { params });
     return data;
 };
+
+export const getStaffByFilmId = async (id: number) => {
+    const { data } = await $kinopoiskHost.get('/api/v1/staff', { params: { filmId: id } });
+    console.log(data)
+    return data;
+};

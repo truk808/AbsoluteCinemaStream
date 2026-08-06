@@ -6,11 +6,11 @@ import { HeroMovieBackdrop } from "./HeroMovieBackdrop.tsx";
 import { HeroMovieStaffList } from "./HeroMovieStaffList.tsx";
 
 export const HeroMovieInfo = () => {
-    const { film, staff, trailer, isLoading } = useHeroMovieInfo();
+    const { film, staff, trailer, isLoading, isLoadingStaff } = useHeroMovieInfo();
 
     if (!film) return <div className="w-full h-full text-white text-9xl flex justify-center items-center">фильма нет! :(</div>;
 
-    if (isLoading) return <Spinner />;
+    if (isLoading && isLoadingStaff) return <Spinner />;
 
     return (
         <div className="min-h-screen bg-brand-bg overflow-x-hidden">

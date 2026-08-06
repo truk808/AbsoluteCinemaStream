@@ -10,6 +10,7 @@ import type {Search} from "../types/search.ts";
 import {filmSearchBuilder} from "./extraReducers/filmSearchBuilder.ts";
 import {CURRENTFIM, FILMCATEGORIES, FILMSEARCH, FILMTRAILER, STAFF} from "../../../../consts.ts";
 import type {Staff} from "../types/staff.ts";
+import {staffBuilder} from "./extraReducers/staffBuilder.ts";
 
 export interface FilmState {
     isFilmLoading: boolean;
@@ -20,6 +21,7 @@ export interface FilmState {
     currentFilm: Film | null;
     filmTrailer: Trailer | null;
     staff: Staff[];
+    isLoadingStaff: boolean;
 }
 
 const initialState: FilmState = {
@@ -34,7 +36,9 @@ const initialState: FilmState = {
     currentFilm: CURRENTFIM,
     // filmCategories: FILMCATEGORIES,
     filmTrailer: FILMTRAILER,
-    staff: STAFF
+    // staff: STAFF,
+    staff: [],
+    isLoadingStaff: true,
 }
 
 export const filmSlice = createSlice({
@@ -59,6 +63,7 @@ export const filmSlice = createSlice({
         filmTrailerBuilder(builder);
         filmByCategory(builder);
         filmSearchBuilder(builder);
+        staffBuilder(builder);
     }
 })
 

@@ -12,7 +12,10 @@ export const HeroMoviePoster = ({film, trailer}: {film: Film, trailer:  Trailer 
             <div className="w-full mt-2 gap-2 flex flex-col">
                 {/* !!!Переделать*/}
                 {(() => {
-                    const youtubeTrailer = trailer?.items.find(item => item.site === 'YOUTUBE');
+                    let youtubeTrailer = trailer?.items.find(item => item.name === 'YOUTUBE');
+                    if (!youtubeTrailer) {
+                        youtubeTrailer = trailer?.items.find(item => item.name.toLocaleLowerCase().split(' ').includes('трейлер'));
+                    }
 
                     return youtubeTrailer ? (
                         <OpenTrailer

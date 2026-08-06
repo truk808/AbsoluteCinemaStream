@@ -15,6 +15,14 @@ export const OpenTrailer = ({url, name, site}: OpenTrailerProps) => {
         console.log(url)
     }, [url])
 
+    const handleClick = () => {
+        if (url.toLocaleLowerCase().split('/').includes('youtube.com') ) {
+            setIsOpen(true);
+        } else {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    };
+
     return (
         <>
             <Modal
@@ -29,7 +37,7 @@ export const OpenTrailer = ({url, name, site}: OpenTrailerProps) => {
                     />
             </Modal>
             <button
-                onClick={() => {setIsOpen(true)}}
+                onClick={() => {handleClick()}}
                 className="w-full flex-grow bg-[#fdc073] font-semibold text-base px-4 py-3.5 rounded-xl text-bg flex items-center justify-center gap-2 cursor-pointer hover:bg-brand-primary transition-colors">
                 Смотреть трейлер
             </button>
