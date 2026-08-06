@@ -1,9 +1,10 @@
 import {NavLink} from "react-router-dom";
 import {ROUTES} from "../../../shared/config";
 import type {SearchFilm} from "../model/types/search.ts";
+import type {Film} from "../model/types/film.ts";
 
 interface FilmCardHorizontalProps {
-    film: SearchFilm;
+    film: SearchFilm | Film;
 }
 
 export const FilmCardHorizontal = ({film}: FilmCardHorizontalProps) => {
@@ -15,7 +16,7 @@ export const FilmCardHorizontal = ({film}: FilmCardHorizontalProps) => {
                 <div className="w-full md:w-[100px] max-h-[330px] flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
                     <img
                         src={film.posterUrl}
-                        alt={film.nameOriginal}
+                        alt={film.nameOriginal || ''}
                         className="w-full h-full object-cover"
                     />
                 </div>
