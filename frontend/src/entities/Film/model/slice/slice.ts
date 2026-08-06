@@ -5,10 +5,7 @@ import {filmByIdBuilder} from "./extraReducers/filmByIdBuilder.ts";
 import {filmTrailerBuilder} from "./extraReducers/filmTrailerBuilder.ts";
 import {createSlice} from "@reduxjs/toolkit";
 import {filmByCategory} from "./extraReducers/filmByCategoryBuilder.ts";
-// import {NEW_FILMS} from "../../../../consts.ts";
-import type {Search} from "../types/search.ts";
 import {filmSearchBuilder} from "./extraReducers/filmSearchBuilder.ts";
-import {CURRENTFIM, FILMCATEGORIES, FILMSEARCH, FILMTRAILER, STAFF} from "../../../../consts.ts";
 import type {Staff} from "../types/staff.ts";
 import {staffBuilder} from "./extraReducers/staffBuilder.ts";
 
@@ -29,14 +26,9 @@ const initialState: FilmState = {
     isTrailerLoading: true,
     categoriesLoading: {},
     error: null,
-    // filmsSearch: null,
-    // filmTrailer: null,
+    filmTrailer: null,
     filmCategories: {},
-    // currentFilm: null,
-    currentFilm: CURRENTFIM,
-    // filmCategories: FILMCATEGORIES,
-    filmTrailer: FILMTRAILER,
-    // staff: STAFF,
+    currentFilm: null,
     staff: [],
     isLoadingStaff: true,
 }
