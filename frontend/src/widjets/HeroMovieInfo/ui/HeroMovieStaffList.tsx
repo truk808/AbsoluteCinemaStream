@@ -1,4 +1,4 @@
-import React, {type FC, memo, useMemo} from 'react';
+import {type FC, memo, useMemo} from 'react';
 import {type Staff, StaffItem} from "../../../entities/Film";
 import Spinner from "../../../shared/ui/Spinner/Spinner.tsx";
 

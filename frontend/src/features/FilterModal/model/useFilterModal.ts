@@ -88,5 +88,6 @@ export const useFilterModal = () => {
         handleOnClick,
 
         handleInputChange,
+        setPage
     }
 }

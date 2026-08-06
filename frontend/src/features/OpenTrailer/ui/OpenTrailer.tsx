@@ -8,7 +8,7 @@ interface OpenTrailerProps {
     site: string;
 }
 
-export const OpenTrailer = ({url, name, site}: OpenTrailerProps) => {
+export const OpenTrailer = ({url}: OpenTrailerProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {

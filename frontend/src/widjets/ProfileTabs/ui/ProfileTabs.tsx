@@ -37,7 +37,9 @@ export const ProfileTabs = memo(({watchList, ratings}: ProfileTabsProps) => {
             />
             <Tabs titles={['Хочу просмотреть', 'Просмотрено']}>
                 <Tabs.Panel>
-                    <CardList>
+                    <CardList
+                        addItem={() => {}}
+                    >
                         {
                             filterAndSortWatchList.map((film) => {
                                 return <FilmCard key={film.kinopoiskId} film={film}/>
@@ -46,7 +48,9 @@ export const ProfileTabs = memo(({watchList, ratings}: ProfileTabsProps) => {
                     </CardList>
                 </Tabs.Panel>
                 <Tabs.Panel>
-                    <CardList>
+                    <CardList
+                        addItem={() => {}}
+                    >
                         {
                             filterAndSortRatings.map(({film, score}) => {
                                 return (

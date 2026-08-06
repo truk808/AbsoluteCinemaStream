@@ -29,7 +29,7 @@ interface Genre {
 
 export interface SearchFilm {
     kinopoiskId: number;
-    imdbId?: string;
+    imdbId?: string | null;
     nameRu: string;
     nameEn: string;
     nameOriginal: string;
