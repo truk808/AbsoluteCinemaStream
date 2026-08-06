@@ -1,13 +1,13 @@
 import type {Film} from "../../../entities/Film";
 import {useDispatch, useSelector} from "react-redux";
 import {removeFilmFromWatchList, selectWatchlist, addFilmToWatchList} from "../../../entities/User";
-import {useMemo} from "react";
+import {memo, useMemo} from "react";
 
 interface AddToWatchListProps {
     film: Film;
 }
 
-export const AddToWatchList = ({film}: AddToWatchListProps) => {
+export const AddToWatchList = memo(({film}: AddToWatchListProps) => {
     const dispatch = useDispatch();
     const watchList = useSelector(selectWatchlist);
 
@@ -35,5 +35,5 @@ export const AddToWatchList = ({film}: AddToWatchListProps) => {
             </svg>
         </button>
     );
-};
+});
 

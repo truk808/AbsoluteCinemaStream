@@ -13,22 +13,28 @@ export const MainPageContent = ({filmsCategory}: MainPageContentProps) => {
         filmsZombie,
         filmsPopular,
         addFilms,
+        isFilmsPopular,
+        isFilmsZombie,
+        isFilmsComic,
     } = useMainPageContent(filmsCategory);
 
     return (
         <div>
             <FilmsList
+                isLoading={isFilmsPopular}
                 title={'Популярное'}
                 films={filmsPopular}
                 addFilms={addFilms}
             />
             <CarouselSection
-                title={'Комедии'}
-                films={filmsComic}
-            />
-            <CarouselSection
+                isLoading={isFilmsZombie}
                 title={'Зондбэ'}
                 films={filmsZombie}
+            />
+            <CarouselSection
+                isLoading={isFilmsComic}
+                title={'Комедии'}
+                films={filmsComic}
             />
         </div>
     );

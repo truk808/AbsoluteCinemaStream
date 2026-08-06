@@ -2,14 +2,14 @@ import {CardList, Tabs} from "../../../shared/ui";
 import {type Film, FilmCard} from "../../../entities/Film";
 import {FilterFilm} from "../../../features/FilterFilm";
 import {useProfileTabs} from "../model/useProfileTabs.ts";
-import {useEffect} from "react";
+import {memo, useEffect} from "react";
 
 export interface ProfileTabsProps {
     watchList: Film[],
     ratings: Record<number, { film: Film; score: number }>
 }
 
-export const ProfileTabs = ({watchList, ratings}: ProfileTabsProps) => {
+export const ProfileTabs = memo(({watchList, ratings}: ProfileTabsProps) => {
     const {
         filterAndSortRatings,
         filterAndSortWatchList,
@@ -65,5 +65,5 @@ export const ProfileTabs = ({watchList, ratings}: ProfileTabsProps) => {
             </Tabs>
         </div>
     );
-};
+});
 

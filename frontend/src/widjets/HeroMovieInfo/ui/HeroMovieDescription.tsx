@@ -1,6 +1,11 @@
 import type {Film} from "../../../entities/Film";
+import {type FC, memo} from "react";
 
-export const HeroMovieDescription = ({film}: {film: Film}) => {
+interface HeroMovieDescriptionProps {
+    film: Film;
+}
+
+export const HeroMovieDescription: FC<HeroMovieDescriptionProps> = memo(({film}) => {
     return (
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6 max-w-3xl">
             <div className="w-full flex flex-col md:flex-row md:justify-between md:items-start gap-4">
@@ -57,4 +62,4 @@ export const HeroMovieDescription = ({film}: {film: Film}) => {
             </div>
         </div>
     );
-};
+});

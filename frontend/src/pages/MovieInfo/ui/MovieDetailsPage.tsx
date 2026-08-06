@@ -13,7 +13,7 @@ export const MovieDetailsPage = () => {
     useEffect(() => {
         if (id) {
             dispatch(fetchFilmById(Number(id)))
-            // dispatch(fetchFilmTrailerById(Number(id)))
+            dispatch(fetchFilmTrailerById(Number(id)))
             dispatch(fetchStaffByFilmId(Number(id)))
         }
     }, [dispatch, id]);

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {memo, useState} from 'react';
 
 type SortField = 'alphabet' | 'kpRating' | 'userRating';
 type SortOrder = 'asc' | 'desc' | null;
@@ -7,7 +7,7 @@ interface MovieSortProps {
     onSortChange?: (field: SortField, order: SortOrder) => void;
 }
 
-export const MovieSort = ({ onSortChange }: MovieSortProps) => {
+export const MovieSort = memo(({ onSortChange }: MovieSortProps) => {
     const [sortField, setSortField] = useState<SortField | null>(null);
     const [sortOrder, setSortOrder] = useState<SortOrder>(null);
 
@@ -77,4 +77,4 @@ export const MovieSort = ({ onSortChange }: MovieSortProps) => {
             </button>
         </div>
     );
-};
+});

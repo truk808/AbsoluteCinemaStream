@@ -11,9 +11,13 @@ export const FilmCard = ({film}: FilmCardProps) => {
         <NavLink to={`${ROUTES.FILM}/${film.kinopoiskId}`} className="block">
             <div className="flex flex-col w-full max-w-[250px] min-h-[440px] group cursor-pointer select-none p-3">
                 <div className="relative w-full h-[340px] rounded-2xl overflow-hidden bg-neutral-900 mb-4">
-                    <div className="absolute top-3 left-3 z-10 bg-brand-primary px-3 py-1.5 rounded-xl flex items-center justify-center text-bg font-black text-sm shadow-md">
-                        <span>{film.ratingKinopoisk ? film.ratingKinopoisk.toFixed(1) : '✔'}</span>
-                    </div>
+                    {
+                        film.ratingKinopoisk &&
+                        <div className="absolute top-3 left-3 z-10 bg-brand-primary px-3 py-1.5 rounded-xl flex items-center justify-center text-bg font-black text-sm shadow-md">
+                            <span>{film.ratingKinopoisk}</span>
+                        </div>
+                    }
+
                     <img
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         src={film.posterUrl}

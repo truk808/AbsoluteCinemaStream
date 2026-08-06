@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {useFromToState} from "../../../shared/ui";
 import {useNavigate} from "react-router-dom";
 import {ROUTES} from "../../../shared/config";
@@ -12,6 +12,10 @@ export const useFilterModal = () => {
     const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
     const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
     const [selectedSort, setSelectedSort] = useState<string[]>([]);
+
+    useEffect(() => {
+        console.log(selectedSort)
+    }, [selectedSort]);
 
     const [searchValue, setSearchValue] = useState<string>('');
 
@@ -61,6 +65,10 @@ export const useFilterModal = () => {
         navigate(`${ROUTES.SEARCH}?${params.toString()}`);
     }
 
+    const handleInputChange = useCallback((e:  React.ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
+        setSearchValue(e.target.value);
+    }, [])
+
     return {
         isOpen,
         setIsOpen,
@@ -78,5 +86,7 @@ export const useFilterModal = () => {
         searchValue,
         setSearchValue,
         handleOnClick,
+
+        handleInputChange,
     }
 }

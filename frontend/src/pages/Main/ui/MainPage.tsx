@@ -11,8 +11,8 @@ export const MainPage = () => {
 
     useEffect(() => {
         dispatch(fetchFilmByCategory({ category: 'TOP_POPULAR_ALL', page: 1 }));
-        // dispatch(fetchFilmByCategory({ category: 'COMICS_THEME', page: 1 }));
-        // dispatch(fetchFilmByCategory({ category: 'ZOMBIE_THEME', page: 1 }));
+        dispatch(fetchFilmByCategory({ category: 'COMICS_THEME', page: 1 }));
+        dispatch(fetchFilmByCategory({ category: 'ZOMBIE_THEME', page: 1 }));
     }, [dispatch]);
 
     return (

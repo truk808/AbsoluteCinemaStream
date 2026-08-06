@@ -1,3 +1,4 @@
+import {memo} from "react";
 
 
 interface ModalProps {
@@ -6,7 +7,7 @@ interface ModalProps {
     children: React.ReactNode,
 }
 
-export const Modal = ({isOpen, onClose, children}: ModalProps) => {
+export const Modal = memo(({isOpen, onClose, children}: ModalProps) => {
     return (
         <div
             className={["fixed top-0 left-0 z-50 w-[100vw] h-[100vh] flex items-center justify-center transition-all", isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'].join(" ")}
@@ -36,4 +37,4 @@ export const Modal = ({isOpen, onClose, children}: ModalProps) => {
             </div>
         </div>
     );
-};
+});

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useMemo, useState} from 'react';
 
 interface UseFromToStateParams {
     minValue?: number;
@@ -9,12 +9,12 @@ export const useFromToState = ({ minValue = 0, maxValue = 10 }: UseFromToStatePa
     const [minCurrentValue, setMinCurrentValue] = useState(minValue);
     const [maxCurrentValue, setMaxCurrentValue] = useState(maxValue);
 
-    return {
+    return useMemo(() => ({
         minValue,
         maxValue,
         minCurrentValue,
         setMinCurrentValue,
         maxCurrentValue,
         setMaxCurrentValue,
-    };
+    }), [minValue, maxValue, minCurrentValue, maxCurrentValue]);
 };

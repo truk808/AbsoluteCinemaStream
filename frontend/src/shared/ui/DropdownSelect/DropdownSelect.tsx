@@ -1,5 +1,6 @@
 import {useDropdownSelect} from "./useDropdownSelect.ts";
 import type {SelectOption} from "./types.ts";
+import {memo} from "react";
 
 interface DropdownSelectProps {
     label: string;
@@ -9,7 +10,7 @@ interface DropdownSelectProps {
     type?: 'checkbox' | 'radio';
 }
 
-export const DropdownSelect = ({
+export const DropdownSelect = memo(({
                                    label,
                                    options,
                                    selectedValues,
@@ -42,17 +43,17 @@ export const DropdownSelect = ({
             {isOpen && (
                 <div className="absolute left-0 right-0 mt-2 bg-[#2d2d2d] border border-brand-primary rounded-xl overflow-hidden z-50 shadow-lg max-h-60 overflow-y-auto">
                     {options.map((option) => {
-                        const isSelected = selectedValues.includes(option.value);
+                        const isSelected = selectedValues.includes(`${option.id}`);
                         return (
                             <label
-                                key={option.value}
+                                key={option.id}
                                 className="flex items-center gap-3 px-4 py-2 hover:bg-[#3d3d3d] cursor-pointer text-brand-text text-sm transition-colors"
                             >
                                 <input
                                     type={type}
                                     name={type === 'radio' ? 'dropdown-radio-group' : undefined}
                                     checked={isSelected}
-                                    onChange={() => handleOptionClick(option.value)}
+                                    onChange={() => handleOptionClick(`${option.id}`)}
                                     className="w-4 h-4 rounded border-brand-primary accent-brand-primary bg-transparent cursor-pointer"
                                 />
                                 <span className="truncate">{option.label}</span>
@@ -63,4 +64,4 @@ export const DropdownSelect = ({
             )}
         </div>
     );
-};
+});

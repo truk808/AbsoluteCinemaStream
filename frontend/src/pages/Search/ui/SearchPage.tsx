@@ -5,8 +5,6 @@ import { useEffect, useMemo } from "react";
 import type { AppDispatch } from "../../../app/store";
 import {SearchPageContent} from "./SearchPageContent.tsx";
 
-
-
 export const SearchPage = () => {
     const dispatch = useDispatch<AppDispatch>();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -28,6 +26,7 @@ export const SearchPage = () => {
             yearFrom: params.yearFrom ? Number(params.yearFrom) : undefined,
             yearTo: params.yearTo ? Number(params.yearTo) : undefined,
         };
+
     }, [searchParams]);
 
     const baseParamsString = JSON.stringify(baseParams);
@@ -41,6 +40,10 @@ export const SearchPage = () => {
             dispatch(fetchFilmsByFilter({ ...baseParams, page: currentPage }));
         }
     }, [dispatch, currentPage, baseParams, filmsCategory]);
+
+    if(!filmsCategory && !SearchPageLoading){
+        return <div className='text-brand-text text-5xl mb-6 text-center font-bold'>По запросу ничего не найдено</div>
+    }
 
     return (
         <div>

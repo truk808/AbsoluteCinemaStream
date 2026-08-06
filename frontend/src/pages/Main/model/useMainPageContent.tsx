@@ -1,8 +1,15 @@
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import type {AppDispatch} from "../../../app/store";
-import {fetchFilmByCategory} from "../../../entities/Film";
+import {categoriesLoading, fetchFilmByCategory} from "../../../entities/Film";
 import {useMemo} from "react";
 import type {FilmCategories} from "../../../entities/Film/model/types/categories.ts";
+
+function hasUnloadedPages(obj: Record<string, Record<number, boolean>>, category: string): boolean {
+    const categoryPages = obj[category];
+    if (!categoryPages) return false;
+
+    return Object.values(categoryPages).includes(false);
+}
 
 // !!!Вынести функцию
 function getArrayFilmsFromAllPages(obj: FilmCategories, category: string) {
@@ -11,7 +18,6 @@ function getArrayFilmsFromAllPages(obj: FilmCategories, category: string) {
         return categoryData.items
     })
 }
-
 export const useMainPageContent = (filmsCategory: FilmCategories) => {
 
     const dispatch = useDispatch<AppDispatch>();
@@ -28,17 +34,34 @@ export const useMainPageContent = (filmsCategory: FilmCategories) => {
     }, [dispatch, filmsCategory])
 
     const filmsZombie = useMemo(() => {
-        return getArrayFilmsFromAllPages(filmsCategory, 'ZOMBI');
+        return getArrayFilmsFromAllPages(filmsCategory, 'ZOMBIE_THEME');
     }, [dispatch, filmsCategory])
 
     const filmsComic = useMemo(() => {
         return getArrayFilmsFromAllPages(filmsCategory, 'COMICS_THEME');
     }, [dispatch, filmsCategory])
 
+    const isCategories = useSelector(categoriesLoading)
+
+    const isFilmsPopular = useMemo(() => {
+        return hasUnloadedPages(isCategories, "TOP_POPULAR_ALL")
+    }, [dispatch, isCategories]);
+
+    const isFilmsZombie = useMemo(() => {
+        return hasUnloadedPages(isCategories, "ZOMBIE_THEME")
+    }, [dispatch, isCategories]);
+
+    const isFilmsComic  = useMemo(() => {
+        return hasUnloadedPages(isCategories, "COMICS_THEME")
+    }, [dispatch, isCategories]);
+
     return {
         addFilms,
         filmsPopular,
         filmsZombie,
         filmsComic,
+        isFilmsPopular,
+        isFilmsZombie,
+        isFilmsComic,
     }
 }

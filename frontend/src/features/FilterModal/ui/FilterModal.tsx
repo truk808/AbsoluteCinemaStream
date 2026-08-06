@@ -2,8 +2,9 @@ import { FromToSlider, Modal } from "../../../shared/ui";
 import { useFilterModal } from "../model/useFilterModal.ts";
 import { DropdownSelect } from "../../../shared/ui/DropdownSelect";
 import { COUNTRY_OPTIONS, GENRES_OPTIONS, SORT_OPTIONS } from "../../../shared/config";
+import {memo} from "react";
 
-export const FilterModal = () => {
+export const FilterModal = memo(() => {
     const {
         isOpen,
         setIsOpen,
@@ -16,7 +17,7 @@ export const FilterModal = () => {
         setSelectedSort,
         selectedSort,
         searchValue,
-        setSearchValue,
+        handleInputChange,
         handleOnClick
     } = useFilterModal();
 
@@ -59,7 +60,7 @@ export const FilterModal = () => {
                     <div className="flex flex-col gap-4 w-full items-center mt-2">
                         <input
                             value={searchValue}
-                            onChange={(e) => {setSearchValue(e.target.value)}}
+                            onChange={(e) => {handleInputChange(e)}}
                             className="w-full border border-brand-primary bg-[#2d2d2d] rounded-xl px-4 h-9 text-brand-text text-base focus:outline-none transition-all placeholder:text-brand-text-muted"
                             type="text"
                             placeholder="Поиск..."
@@ -85,4 +86,4 @@ export const FilterModal = () => {
             </button>
         </>
     );
-};
+});

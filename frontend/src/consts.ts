@@ -13,10 +13,10 @@ export const NEW_FILMS = {
             "nameOriginal": "The Odyssey",
             "countries": [
                 {
-                    "country": "США"
+                    "label": "США"
                 },
                 {
-                    "country": "Великобритания"
+                    "label": "Великобритания"
                 }
             ],
             "genres": [
@@ -49,7 +49,7 @@ export const NEW_FILMS = {
             "nameOriginal": "Spider-Man: Brand New Day",
             "countries": [
                 {
-                    "country": "США"
+                    "label": "США"
                 }
             ],
             "genres": [
@@ -85,7 +85,7 @@ export const NEW_FILMS = {
             "nameOriginal": null,
             "countries": [
                 {
-                    "country": "Россия"
+                    "label": "Россия"
                 }
             ],
             "genres": [
@@ -115,10 +115,10 @@ export const NEW_FILMS = {
             "nameOriginal": "Backrooms",
             "countries": [
                 {
-                    "country": "США"
+                    "label": "США"
                 },
                 {
-                    "country": "Канада"
+                    "label": "Канада"
                 }
             ],
             "genres": [
@@ -145,10 +145,10 @@ export const NEW_FILMS = {
             "nameOriginal": "Michael",
             "countries": [
                 {
-                    "country": "США"
+                    "label": "США"
                 },
                 {
-                    "country": "Великобритания"
+                    "label": "Великобритания"
                 }
             ],
             "genres": [

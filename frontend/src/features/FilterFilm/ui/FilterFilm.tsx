@@ -1,4 +1,5 @@
 import {MovieSort} from "./FilmSort.tsx";
+import {memo, useCallback} from "react";
 
 type SortField = 'alphabet' | 'kpRating' | 'userRating' | null;
 type SortOrder = 'asc' | 'desc' | null;
@@ -12,7 +13,11 @@ interface FilterFilmProps {
     setSortField: (value: SortField) => void;
 }
 
-export const FilterFilm = ({setSearchValue, searchValue, setSortField, setSortOrder}: FilterFilmProps) => {
+export const FilterFilm = memo(({setSearchValue, searchValue, setSortField, setSortOrder}: FilterFilmProps) => {
+    const handleSortChange = useCallback((field: SortField, order: SortOrder) => {
+        setSortField(order ? field : null);
+        setSortOrder(order);
+    }, [setSortField, setSortOrder]);
 
     return (
         <div className='w-full max-w-[400px] md:max-w-[1200px] bg-brand-bg rounded-[32px] flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 md:gap-8 mx-auto'>
@@ -24,12 +29,9 @@ export const FilterFilm = ({setSearchValue, searchValue, setSortField, setSortOr
                 value={searchValue}
             />
             <MovieSort
-                onSortChange={(field, order) => {
-                    setSortField(order ? field : null);
-                    setSortOrder(order);
-                }}
+                onSortChange={handleSortChange}
             />
         </div>
     );
-};
+});
 

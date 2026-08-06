@@ -27,7 +27,7 @@ export const HeroMovieInfo = () => {
                     </div>
 
                     <div className="w-full md:col-span-2 lg:col-span-1">
-                        <HeroMovieStaffList staff={staff} />
+                        <HeroMovieStaffList staff={staff} isLoadingStaff={isLoadingStaff}/>
                     </div>
 
                 </div>

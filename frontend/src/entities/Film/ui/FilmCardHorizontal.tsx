@@ -15,7 +15,7 @@ export const FilmCardHorizontal = ({film}: FilmCardHorizontalProps) => {
                 <div className="w-full md:w-[100px] max-h-[330px] flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
                     <img
                         src={film.posterUrl}
-                        alt="Interstellar Movie Poster"
+                        alt={film.nameOriginal}
                         className="w-full h-full object-cover"
                     />
                 </div>
@@ -41,9 +41,13 @@ export const FilmCardHorizontal = ({film}: FilmCardHorizontalProps) => {
                     <div className="flex flex-wrap items-center gap-2 text-brand-text-muted text-base font-medium my-4">
                         <span>{film.year}</span>
                         <span className="text-zinc-600">•</span>
-                        <span>Жанры</span>
+                            {film.genres.map(((genre) => {
+                                return(<span>{genre.genre}</span>)
+                            }))}
                         <span className="text-zinc-600">•</span>
-                        <span>страна</span>
+                        {film.countries.map(((countries) => {
+                            return(<span>{countries.country}</span>)
+                        }))}
                     </div>
                 </div>
             </div>

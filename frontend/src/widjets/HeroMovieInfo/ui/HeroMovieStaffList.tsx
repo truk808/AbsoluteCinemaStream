@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, {type FC, memo, useMemo} from 'react';
 import {type Staff, StaffItem} from "../../../entities/Film";
 import Spinner from "../../../shared/ui/Spinner/Spinner.tsx";
 
@@ -7,7 +7,7 @@ interface HeroMovieStaffListProps {
     isLoadingStaff: boolean;
 }
 
-export const HeroMovieStaffList: React.FC<HeroMovieStaffListProps> = ({ staff, isLoadingStaff }) => {
+export const HeroMovieStaffList: FC<HeroMovieStaffListProps> = memo(({ staff, isLoadingStaff }) => {
     const actors = useMemo(() => {
         if (!staff) return [];
         return staff.filter(member => member.professionKey === "ACTOR");
@@ -30,4 +30,4 @@ export const HeroMovieStaffList: React.FC<HeroMovieStaffListProps> = ({ staff, i
             </div>
         </div>
     );
-};
+});

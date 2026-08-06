@@ -1,4 +1,5 @@
 import {useFromToSlider} from "./useFromToSlider.ts";
+import {memo} from "react";
 
 export interface FromToSliderProps {
     slider: {
@@ -12,8 +13,7 @@ export interface FromToSliderProps {
     title: string;
 }
 
-export const FromToSlider = ({ slider, title }: FromToSliderProps) => {
-
+export const FromToSlider = memo(({ slider, title }: FromToSliderProps) => {
     const {
         handleMinChange,
         handleMaxChange,
@@ -80,4 +80,4 @@ export const FromToSlider = ({ slider, title }: FromToSliderProps) => {
             </div>
         </div>
     );
-}
+})
