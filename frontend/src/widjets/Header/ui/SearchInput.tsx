@@ -12,7 +12,7 @@ export const SearchInput = ({ className = '' }: SearchInputProps) => {
 
     function handleOnClick(event) {
         if (event.key === 'Enter') {
-            navigate(`${ROUTES.SEARCH}?keyword=${event.target.value}`);
+            navigate(`${ROUTES.SEARCH}?keyword=${event.target.value}&page=1`);
         }
     }
 

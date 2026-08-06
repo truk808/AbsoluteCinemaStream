@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
 interface CarouselProps {
-    children: React.ReactNode[];
+    children: React.ReactNode[] | undefined;
     // loadMore: () => void;
 }
 

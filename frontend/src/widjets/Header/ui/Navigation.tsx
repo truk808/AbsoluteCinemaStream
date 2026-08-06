@@ -8,8 +8,8 @@ interface NavigationProps {
 
 const links = [
     { to: ROUTES.MAIN, label: 'Главная', isPrimary: true },
-    { to: '#', label: 'Кино' },
-    { to: '#', label: 'TV' },
+    // { to: '#', label: 'Кино' },
+    // { to: '#', label: 'TV' },
 ];
 
 export const Navigation = ({ className = '', onItemClick }: NavigationProps) => {

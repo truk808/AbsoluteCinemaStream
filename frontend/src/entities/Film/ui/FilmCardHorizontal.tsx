@@ -8,9 +8,9 @@ interface FilmCardHorizontalProps {
 
 export const FilmCardHorizontal = ({film}: FilmCardHorizontalProps) => {
     return (
-        <NavLink to={`${ROUTES.FILM}/${film.filmId}`}>
+        <NavLink className='min-w-[800px] flex justify-center ' to={`${ROUTES.FILM}/${film.kinopoiskId}`}>
             <div
-                className="bg-brand-bg text-brand-text max-w-4xl p-6 rounded-xl flex flex-col md:flex-row gap-6 border border-zinc-800/50 shadow-2xl">
+                className="w-full bg-brand-bg text-brand-text max-w-4xl p-6 rounded-xl flex flex-col md:flex-row gap-6 border border-zinc-800/50 shadow-2xl">
 
                 <div className="w-full md:w-[100px] max-h-[330px] flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
                     <img
@@ -34,7 +34,7 @@ export const FilmCardHorizontal = ({film}: FilmCardHorizontalProps) => {
                                 <path
                                     d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                             </svg>
-                            <span>{film.rating}</span>
+                            <span>{film.ratingKinopoisk}</span>
                         </div>
                     </div>
 
@@ -44,8 +44,6 @@ export const FilmCardHorizontal = ({film}: FilmCardHorizontalProps) => {
                         <span>Жанры</span>
                         <span className="text-zinc-600">•</span>
                         <span>страна</span>
-                        <span className="text-zinc-600">•</span>
-                        <span>{film.filmLength} ч</span>
                     </div>
                 </div>
             </div>

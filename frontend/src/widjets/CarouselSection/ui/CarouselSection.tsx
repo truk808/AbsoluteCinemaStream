@@ -3,7 +3,7 @@ import {Carousel} from "../../../shared/ui";
 
 interface CarouselSectionProps {
     title: string;
-    films: Film[]
+    films: Film[] | undefined;
     loadMore?: () => void;
 }
 
@@ -13,7 +13,7 @@ export const CarouselSection = ({title, films}: CarouselSectionProps) => {
             <h2 className='text-5xl font-black text-brand-text mb-5'>{title}</h2>
             <Carousel>
                 {
-                    films.map(film => {
+                    films?.map(film => {
                         return <FilmCard film={film} />
                     })
                 }
