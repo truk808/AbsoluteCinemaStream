@@ -8,7 +8,8 @@ import {filmByCategory} from "./extraReducers/filmByCategoryBuilder.ts";
 // import {NEW_FILMS} from "../../../../consts.ts";
 import type {Search} from "../types/search.ts";
 import {filmSearchBuilder} from "./extraReducers/filmSearchBuilder.ts";
-import {CURRENTFIM, FILMCATEGORIES, FILMSEARCH, FILMTRAILER} from "../../../../consts.ts";
+import {CURRENTFIM, FILMCATEGORIES, FILMSEARCH, FILMTRAILER, STAFF} from "../../../../consts.ts";
+import type {Staff} from "../types/staff.ts";
 
 export interface FilmState {
     isFilmLoading: boolean;
@@ -18,6 +19,7 @@ export interface FilmState {
     filmCategories: FilmCategories;
     currentFilm: Film | null;
     filmTrailer: Trailer | null;
+    staff: Staff[];
 }
 
 const initialState: FilmState = {
@@ -29,9 +31,10 @@ const initialState: FilmState = {
     // filmTrailer: null,
     filmCategories: {},
     // currentFilm: null,
-    filmTrailer: FILMTRAILER,
-    // filmCategories: FILMCATEGORIES,
     currentFilm: CURRENTFIM,
+    // filmCategories: FILMCATEGORIES,
+    filmTrailer: FILMTRAILER,
+    staff: STAFF
 }
 
 export const filmSlice = createSlice({

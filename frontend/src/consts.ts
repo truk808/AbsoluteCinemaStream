@@ -1656,3 +1656,420 @@ export const FILMTRAILER = {
         }
     ]
 }
+
+export const STAFF = [
+    {
+        "staffId": 1162070,
+        "nameRu": "Дестин Дэниел Креттон",
+        "nameEn": "Destin Daniel Cretton",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1162070.jpg",
+        "professionText": "Режиссеры",
+        "professionKey": "DIRECTOR"
+    },
+    {
+        "staffId": 2280681,
+        "nameRu": "Том Холланд",
+        "nameEn": "Tom Holland",
+        "description": "Peter Parker / Spider-Man",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2280681.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 2317683,
+        "nameRu": "Зендея",
+        "nameEn": "Zendaya",
+        "description": "MJ",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2317683.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 3155036,
+        "nameRu": "Сэди Синк",
+        "nameEn": "Sadie Sink",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3155036.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 4449405,
+        "nameRu": "Джейкоб Баталон",
+        "nameEn": "Jacob Batalon",
+        "description": "Ned",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4449405.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 551260,
+        "nameRu": "Джон Бернтал",
+        "nameEn": "Jon Bernthal",
+        "description": "Frank Castle / Punisher",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_551260.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 4129580,
+        "nameRu": "Трэмелл Тиллман",
+        "nameEn": "Tramell Tillman",
+        "description": "Bill",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4129580.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 1706921,
+        "nameRu": "Майкл Мэндо",
+        "nameEn": "Michael Mando",
+        "description": "Mac Gargan / Scorpion",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1706921.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 1114711,
+        "nameRu": "Мелани Скрофано",
+        "nameEn": "Melanie Scrofano",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1114711.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 10467,
+        "nameRu": "Марк Руффало",
+        "nameEn": "Mark Ruffalo",
+        "description": "Bruce Banner / Hulk",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_10467.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 5485643,
+        "nameRu": "",
+        "nameEn": "Zarra Kaahn",
+        "description": "DODC Agent",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5485643.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 5405808,
+        "nameRu": "Джамал Бёрчер",
+        "nameEn": "Jamaal Burcher",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5405808.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 10229151,
+        "nameRu": "Иэн Чэнс",
+        "nameEn": "Ian Chance",
+        "description": "Manhattan Businessman",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_10229151.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 38847,
+        "nameRu": "Лиза Колон-Зайас",
+        "nameEn": "Liza Colón-Zayas",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_38847.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 4787907,
+        "nameRu": "Эман Эсфанди",
+        "nameEn": "Eman Esfandi",
+        "description": "MJ’s Boyfriend",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4787907.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 586324,
+        "nameRu": "Забрина Гевара",
+        "nameEn": "Zabryna Guevara",
+        "description": "Sheila Riviera",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_586324.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 3144977,
+        "nameRu": "Марвин Джонс III",
+        "nameEn": "Marvin Jones III",
+        "description": "Tombstone",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3144977.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 563957,
+        "nameRu": "Вивьен Кин",
+        "nameEn": "Vivien Keene",
+        "description": "Female Janitor",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_563957.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 4466194,
+        "nameRu": "",
+        "nameEn": "Kurtis Lowe",
+        "description": "DODC Box Guard",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4466194.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 10434457,
+        "nameRu": "",
+        "nameEn": "Leah Phillips",
+        "description": "танцор",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_10434457.jpg",
+        "professionText": "Актеры",
+        "professionKey": "ACTOR"
+    },
+    {
+        "staffId": 8281,
+        "nameRu": "Ави Арад",
+        "nameEn": "Avi Arad",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_8281.jpg",
+        "professionText": "Продюсеры",
+        "professionKey": "PRODUCER"
+    },
+    {
+        "staffId": 8283,
+        "nameRu": "Кевин Файги",
+        "nameEn": "Kevin Feige",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_8283.jpg",
+        "professionText": "Продюсеры",
+        "professionKey": "PRODUCER"
+    },
+    {
+        "staffId": 544956,
+        "nameRu": "Рэйчел О’Коннор",
+        "nameEn": "Rachel O'Connor",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_544956.jpg",
+        "professionText": "Продюсеры",
+        "professionKey": "PRODUCER"
+    },
+    {
+        "staffId": 3961402,
+        "nameRu": "Дэвид Кэйн",
+        "nameEn": "David Cain",
+        "description": "исполнительный продюсер",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3961402.jpg",
+        "professionText": "Продюсеры",
+        "professionKey": "PRODUCER"
+    },
+    {
+        "staffId": 30360,
+        "nameRu": "Луис Д’Эспозито",
+        "nameEn": "Louis D'Esposito",
+        "description": "исполнительный продюсер",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_30360.jpg",
+        "professionText": "Продюсеры",
+        "professionKey": "PRODUCER"
+    },
+    {
+        "staffId": 3989516,
+        "nameRu": "Эми Паскаль",
+        "nameEn": "Amy Pascal",
+        "description": "исполнительный продюсер",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3989516.jpg",
+        "professionText": "Продюсеры",
+        "professionKey": "PRODUCER"
+    },
+    {
+        "staffId": 1068613,
+        "nameRu": "Крис МакКенна",
+        "nameEn": "Chris McKenna",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1068613.jpg",
+        "professionText": "Сценаристы",
+        "professionKey": "WRITER"
+    },
+    {
+        "staffId": 1189659,
+        "nameRu": "Эрик Соммерс",
+        "nameEn": "Erik Sommers",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1189659.jpg",
+        "professionText": "Сценаристы",
+        "professionKey": "WRITER"
+    },
+    {
+        "staffId": 2253549,
+        "nameRu": "Джастин Куритцкес",
+        "nameEn": "Justin Kuritzkes",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2253549.jpg",
+        "professionText": "Сценаристы",
+        "professionKey": "WRITER"
+    },
+    {
+        "staffId": 8242,
+        "nameRu": "Стэн Ли",
+        "nameEn": "Stan Lee",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_8242.jpg",
+        "professionText": "Сценаристы",
+        "professionKey": "WRITER"
+    },
+    {
+        "staffId": 36183,
+        "nameRu": "Стив Дитко",
+        "nameEn": "Steve Ditko",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_36183.jpg",
+        "professionText": "Сценаристы",
+        "professionKey": "WRITER"
+    },
+    {
+        "staffId": 1080663,
+        "nameRu": "Бретт Павлак",
+        "nameEn": "Brett Pawlak",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1080663.jpg",
+        "professionText": "Операторы",
+        "professionKey": "OPERATOR"
+    },
+    {
+        "staffId": 257568,
+        "nameRu": "Майкл Джаккино",
+        "nameEn": "Michael Giacchino",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_257568.jpg",
+        "professionText": "Композиторы",
+        "professionKey": "COMPOSER"
+    },
+    {
+        "staffId": 70998,
+        "nameRu": "Чарльз Вуд",
+        "nameEn": "Charles Wood",
+        "description": "постановщик",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_70998.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 6636927,
+        "nameRu": "Томас Браун",
+        "nameEn": "Thomas Brown",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6636927.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 3960382,
+        "nameRu": "Оливер Кэрролл",
+        "nameEn": "Oliver Carroll",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3960382.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 10418125,
+        "nameRu": "",
+        "nameEn": "Diego de Lajonquiere",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_10418125.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 6798962,
+        "nameRu": "",
+        "nameEn": "Lara Genovese",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6798962.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 7058949,
+        "nameRu": "Крэйг Гилрой",
+        "nameEn": "Craig Gilroy",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7058949.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 3027376,
+        "nameRu": "Оуэн Манн",
+        "nameEn": "Owen Mann",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3027376.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 1989406,
+        "nameRu": "Майк Стэллион",
+        "nameEn": "Mike Stallion",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1989406.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 1115548,
+        "nameRu": "Санья Милкович Хэйс",
+        "nameEn": "Sanja Milkovic Hays",
+        "description": "по костюмам",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1115548.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 2000711,
+        "nameRu": "Джон Буш",
+        "nameEn": "John Bush",
+        "description": "по декорациям",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2000711.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 3402419,
+        "nameRu": "",
+        "nameEn": "Katie Ralph",
+        "description": "по декорациям",
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3402419.jpg",
+        "professionText": "Художники",
+        "professionKey": "DESIGN"
+    },
+    {
+        "staffId": 2028356,
+        "nameRu": "Нат Сандерс",
+        "nameEn": "Nat Sanders",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2028356.jpg",
+        "professionText": "Монтажеры",
+        "professionKey": "EDITOR"
+    },
+    {
+        "staffId": 3379404,
+        "nameRu": "Джина Сэнсом",
+        "nameEn": "Gina Sansom",
+        "description": null,
+        "posterUrl": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3379404.jpg",
+        "professionText": "Монтажеры",
+        "professionKey": "EDITOR"
+    }
+]
