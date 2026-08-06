@@ -1,6 +1,6 @@
-import type {Film} from "../model/type.ts";
 import {NavLink} from "react-router-dom";
 import {ROUTES} from "../../../shared/config";
+import type {Film} from "../model/types/film.ts";
 
 interface FilmCardProps {
     film: Film;

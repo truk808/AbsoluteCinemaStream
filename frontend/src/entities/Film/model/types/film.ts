@@ -7,6 +7,7 @@ export interface FilmGenre {
 }
 
 export interface Film {
+
     kinopoiskId: number;
     nameRu: string | null;
     nameEn: string | null;
@@ -18,8 +19,8 @@ export interface Film {
     year: number | null;
     ratingKinopoisk: number | null;
     ratingImdb: number | null;
-    coverUrl: string | null ;
-    logoUrl: string | null ;
+    coverUrl?: string | null;
+    logoUrl?: string | null;
     ratingRfCritics?: number | null;
     ratingRfCriticsVoteCount?: number | null;
     editorAnnotation?: string | null;

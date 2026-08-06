@@ -10,12 +10,11 @@ export const SearchInput = ({ className = '' }: SearchInputProps) => {
     const navigate = useNavigate();
     const [value, setValue] = useState('');
 
-    function handleOnClick(event) {
+    function handleOnClick(event: React.KeyboardEvent<HTMLInputElement>) {
         if (event.key === 'Enter') {
-            navigate(`${ROUTES.SEARCH}?keyword=${event.target.value}&page=1`);
+            navigate(`${ROUTES.SEARCH}?keyword=${event.currentTarget.value}&page=1`);
         }
     }
-
     return (
         <input
             value={value}

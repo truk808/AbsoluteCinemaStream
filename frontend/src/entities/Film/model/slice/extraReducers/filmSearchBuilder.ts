@@ -21,7 +21,6 @@ export const filmSearchBuilder = (builder: ActionReducerMapBuilder<FilmState>) =
             }
 
             state.filmCategories["SEARCH"][page] = {
-                page,
                 totalPages,
                 total,
                 items,
