@@ -1344,59 +1344,61 @@
 //     ]
 // }
 //
-// export const RATING_FILMS: Record<number, { film: Film; score: number }> = {
-//     301: {
-//         score: 10,
-//         film: {
-//             "kinopoiskId": 301,
-//             "kinopoiskHDId": "4824a95e60a7db7e86f14137516ba590",
-//             "imdbId": "tt0133093",
-//             "nameRu": "Матрица",
-//             "nameEn": null,
-//             "nameOriginal": "The Matrix",
-//             "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/301.jpg",
-//             "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/301.jpg",
-//             "coverUrl": "https://avatars.mds.yandex.net/get-ott/2419418/2a0000017c27e0e090b55381c1b06e5c5b0b/orig",
-//             "logoUrl": null,
-//             "reviewsCount": 319,
-//             "ratingGoodReview": 89.0,
-//             "ratingGoodReviewVoteCount": 264,
-//             "ratingKinopoisk": 8.5,
-//             "ratingKinopoiskVoteCount": 796307,
-//             "ratingImdb": 8.7,
-//             "ratingImdbVoteCount": 2200000,
-//             "ratingFilmCritics": 7.9,
-//             "ratingFilmCriticsVoteCount": 209,
-//             "ratingAwait": null,
-//             "ratingAwaitCount": 0,
-//             "ratingRfCritics": 60.0,
-//             "ratingRfCriticsVoteCount": 5,
-//             "webUrl": "https://www.kinopoisk.ru/film/301/",
-//             "year": 1999,
-//             "filmLength": 136,
-//             "slogan": "Добро пожаловать в реальный мир",
-//             "description": "Жизнь Томаса Андерсона разделена на две части...",
-//             "shortDescription": "Хакер Нео узнает, что его мир — виртуальный...",
-//             "editorAnnotation": null,
-//             "isTicketsAvailable": false,
-//             "productionStatus": null,
-//             "type": "FILM",
-//             "ratingMpaa": "r",
-//             "ratingAgeLimits": "age18",
-//             "countries": [{"country": "США"}, {"country": "Австралия"}],
-//             "genres": [{"genre": "фантастика"}, {"genre": "боевик"}],
-//             "startYear": null,
-//             "endYear": null,
-//             "serial": false,
-//             "shortFilm": false,
-//             "completed": false,
-//             "hasImax": false,
-//             "has3D": false,
-//             "lastSync": "2026-04-19T16:02:03.057916"
-//         }
-//     },
-// };
-//
+import type {Film} from "./entities/Film";
+
+export const RATING_FILMS: Record<number, { film: Film; score: number }> = {
+    301: {
+        score: 10,
+        film: {
+            "kinopoiskId": 301,
+            "kinopoiskHDId": "4824a95e60a7db7e86f14137516ba590",
+            "imdbId": "tt0133093",
+            "nameRu": "Матрица",
+            "nameEn": null,
+            "nameOriginal": "The Matrix",
+            "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/301.jpg",
+            "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/301.jpg",
+            "coverUrl": "https://avatars.mds.yandex.net/get-ott/2419418/2a0000017c27e0e090b55381c1b06e5c5b0b/orig",
+            "logoUrl": null,
+            "reviewsCount": 319,
+            "ratingGoodReview": 89.0,
+            "ratingGoodReviewVoteCount": 264,
+            "ratingKinopoisk": 8.5,
+            "ratingKinopoiskVoteCount": 796307,
+            "ratingImdb": 8.7,
+            "ratingImdbVoteCount": 2200000,
+            "ratingFilmCritics": 7.9,
+            "ratingFilmCriticsVoteCount": 209,
+            "ratingAwait": null,
+            "ratingAwaitCount": 0,
+            "ratingRfCritics": 60.0,
+            "ratingRfCriticsVoteCount": 5,
+            "webUrl": "https://www.kinopoisk.ru/film/301/",
+            "year": 1999,
+            "filmLength": 136,
+            "slogan": "Добро пожаловать в реальный мир",
+            "description": "Жизнь Томаса Андерсона разделена на две части...",
+            "shortDescription": "Хакер Нео узнает, что его мир — виртуальный...",
+            "editorAnnotation": null,
+            "isTicketsAvailable": false,
+            "productionStatus": null,
+            "type": "FILM",
+            "ratingMpaa": "r",
+            "ratingAgeLimits": "age18",
+            "countries": [{"country": "США"}, {"country": "Австралия"}],
+            "genres": [{"genre": "фантастика"}, {"genre": "боевик"}],
+            "startYear": null,
+            "endYear": null,
+            "serial": false,
+            "shortFilm": false,
+            "completed": false,
+            "hasImax": false,
+            "has3D": false,
+            "lastSync": "2026-04-19T16:02:03.057916"
+        }
+    },
+};
+
 // export const SEARCH_FILMS = {
 //     "total": 200,
 //     "totalPages": 7,
@@ -1426,80 +1428,80 @@
 //     ]
 // }
 //
-// export const WATCHLIST: Film[] = [
-//     {
-//         "kinopoiskId": 5437609,
-//         "imdbId": null,
-//         "nameRu": "Грязные деньги",
-//         "nameEn": null,
-//         "nameOriginal": "In the Grey",
-//         "countries": [
-//             {
-//                 "country": "США"
-//             },
-//             {
-//                 "country": "Великобритания"
-//             }
-//         ],
-//         "genres": [
-//             {
-//                 "genre": "триллер"
-//             },
-//             {
-//                 "genre": "боевик"
-//             }
-//         ],
-//         "ratingKinopoisk": null,
-//         "ratingImdb": null,
-//         "year": 2026,
-//         "type": "FILM",
-//         "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5437609.jpg",
-//         "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5437609.jpg",
-//         "coverUrl": "https://avatars.mds.yandex.net/get-ott/1672343/2a0000019d1aa3aec91dcfd39f4af58771c1/orig",
-//         "logoUrl": null,
-//         "description": "Когда безжалостный магнат Салазар присваивает себе миллиард долларов, отряд элитных агентов под управлением проницательной Рэйчел получает задание вернуть деньги любой ценой. Сид, Бронко и их соратники начинают воплощать стратегию давления на афериста, а затем отправляются на остров Салазара, где проявляют все свои навыки обращения с оружием и взрывчаткой. Однако внезапно ситуация выходит из-под контроля.",
-//         "ratingAgeLimits": "age18"
-//     },
-//     {
-//         "kinopoiskId": 460586,
-//         "imdbId": "tt1190634",
-//         "nameRu": "Пацаны",
-//         "nameEn": null,
-//         "nameOriginal": "The Boys",
-//         "countries": [
-//             {
-//                 "country": "США"
-//             }
-//         ],
-//         "genres": [
-//             {
-//                 "genre": "драма"
-//             },
-//             {
-//                 "genre": "криминал"
-//             },
-//             {
-//                 "genre": "фантастика"
-//             },
-//             {
-//                 "genre": "боевик"
-//             },
-//             {
-//                 "genre": "комедия"
-//             }
-//         ],
-//         "ratingKinopoisk": 8.3,
-//         "ratingImdb": 8.6,
-//         "year": 2019,
-//         "type": "TV_SERIES",
-//         "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/460586.jpg",
-//         "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/460586.jpg",
-//         "coverUrl": "https://avatars.mds.yandex.net/get-ott/2419418/2a0000017c0791e438d10a65d3d63c4381b9/orig",
-//         "logoUrl": "https://avatars.mds.yandex.net/get-ott/239697/2a00000177bb06c2c5827c6e25944e2f31fb/orig",
-//         "description": "Супергерои являются настоящими звездами. Их все знают и обожают. Но за идеальным фасадом скрывается мрачный мир наркотиков и секса, а большинство героев в жизни не самые приятные люди. Противостоит им отряд, неофициально известный как «Пацаны».",
-//         "ratingAgeLimits": "age18"
-//     },
-// ]
+export const WATCHLIST: Film[] = [
+    {
+        "kinopoiskId": 5437609,
+        "imdbId": null,
+        "nameRu": "Грязные деньги",
+        "nameEn": null,
+        "nameOriginal": "In the Grey",
+        "countries": [
+            {
+                "country": "США"
+            },
+            {
+                "country": "Великобритания"
+            }
+        ],
+        "genres": [
+            {
+                "genre": "триллер"
+            },
+            {
+                "genre": "боевик"
+            }
+        ],
+        "ratingKinopoisk": null,
+        "ratingImdb": null,
+        "year": 2026,
+        "type": "FILM",
+        "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/5437609.jpg",
+        "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/5437609.jpg",
+        "coverUrl": "https://avatars.mds.yandex.net/get-ott/1672343/2a0000019d1aa3aec91dcfd39f4af58771c1/orig",
+        "logoUrl": null,
+        "description": "Когда безжалостный магнат Салазар присваивает себе миллиард долларов, отряд элитных агентов под управлением проницательной Рэйчел получает задание вернуть деньги любой ценой. Сид, Бронко и их соратники начинают воплощать стратегию давления на афериста, а затем отправляются на остров Салазара, где проявляют все свои навыки обращения с оружием и взрывчаткой. Однако внезапно ситуация выходит из-под контроля.",
+        "ratingAgeLimits": "age18"
+    },
+    {
+        "kinopoiskId": 460586,
+        "imdbId": "tt1190634",
+        "nameRu": "Пацаны",
+        "nameEn": null,
+        "nameOriginal": "The Boys",
+        "countries": [
+            {
+                "country": "США"
+            }
+        ],
+        "genres": [
+            {
+                "genre": "драма"
+            },
+            {
+                "genre": "криминал"
+            },
+            {
+                "genre": "фантастика"
+            },
+            {
+                "genre": "боевик"
+            },
+            {
+                "genre": "комедия"
+            }
+        ],
+        "ratingKinopoisk": 8.3,
+        "ratingImdb": 8.6,
+        "year": 2019,
+        "type": "TV_SERIES",
+        "posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/460586.jpg",
+        "posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/460586.jpg",
+        "coverUrl": "https://avatars.mds.yandex.net/get-ott/2419418/2a0000017c0791e438d10a65d3d63c4381b9/orig",
+        "logoUrl": "https://avatars.mds.yandex.net/get-ott/239697/2a00000177bb06c2c5827c6e25944e2f31fb/orig",
+        "description": "Супергерои являются настоящими звездами. Их все знают и обожают. Но за идеальным фасадом скрывается мрачный мир наркотиков и секса, а большинство героев в жизни не самые приятные люди. Противостоит им отряд, неофициально известный как «Пацаны».",
+        "ratingAgeLimits": "age18"
+    },
+]
 //
 //
 // export const FILMSEARCH = {
